@@ -13,24 +13,27 @@ struct DNode {
 };
 
 class StdElement {
-    char S_in;
-    int bottom_out = 0, left = 0, diag = 0, top = 0, score = 0;
+    char X_in;
+    int bottom = 0, left = 0, diag = 0, top = 0, score = 0;
     int match = 2, mismatch = -1, gap = -1;
 public:
     explicit StdElement(char S, int match = 2, int mismatch = -1, int gap = -1);
     int align(char, int);
-    int bottom();
+    int getBottom();
+    int getScore();
 };
 
 class StdProc {
-    DNode *T_root;
-    long S_len, T_len;
+    DNode *Y_root;
+    char *X, *Y;
+    long X_len, Y_len;
 
-    std::vector<char> T_shift_reg;
+    std::vector<char> Y_shift_reg;
     std::vector<StdElement> pe_array;
 public:
-    int score_matrix[300][300] = {};
+    int *score_matrix;
 
-    StdProc(std::string &S, std::string &T);
+    StdProc(char *X, int X_len, char *Y, int Y_len);
     void process();
+    void print();
 };

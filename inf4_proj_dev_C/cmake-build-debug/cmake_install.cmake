@@ -1,4 +1,4 @@
-# Install script for directory: /home/vytas/INF4/C/inf4_proj_dev_C
+# Install script for directory: /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_C
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vytas/INF4/C/inf4_proj_dev_C/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vytas/INF4/inf4_proj_main/inf4_proj_dev_C/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

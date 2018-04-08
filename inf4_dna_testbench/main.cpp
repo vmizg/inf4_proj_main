@@ -1,29 +1,35 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <cassert>
 #include "align.h"
 
 using namespace std;
 
-StdElement::StdElement(char S, int match, int mismatch, int gap) {
-    this->S_in = S;
+StdElement::StdElement(char X, int match, int mismatch, int gap) {
+    this->X_in = X;
     this->match = match;
     this->mismatch = mismatch;
     this->gap = gap;
 }
 
-int StdElement::align(char T, int top_in) {
+int StdElement::align(char Y, int top_in) {
     // Diagonal value is the value from upper PE at T-2 time
     this->diag = this->top;
 
     // Top value is the value from upper PE at T-1 time
     this->top = top_in;
 
-    cout << "S: " << this->S_in << ", T: " << T << " - "; // DEBUG
-    cout << "Left=" << this->left << ", Diag=" << this->diag << ", Top=" << this->top; // DEBUG
+    // Debug
+    // cout << "X: " << this->X_in << ", Y: " << Y << " - ";
+    // cout << "Left=" << this->left << ", Diag=" << this->diag << ", Top=" << this->top;
 
     // F(i-1,j-1) + S(xi,yi) = diagonal value + match / mismatch
-    int ms = (this->S_in == T) ?
+    int ms = (this->X_in == Y) ?
                  this->diag + this->match :
                  this->diag + this->mismatch;
 
@@ -37,54 +43,62 @@ int StdElement::align(char T, int top_in) {
     this->score = max(max(ms, i1), max(i2, 0));
 
     // Save previous score (current left value) to be used as top input for PE+1, T+1 time
-    this->bottom_out = this->left;
+    this->bottom = this->left;
 
     // Save score to be used as left value for T+1 time
     this->left = this->score;
 
-    cout << ", score=" << this->score << endl; // DEBUG
+    // Debug
+    // cout << ", score=" << this->score << endl; // DEBUG
 
     // Return score to write to score matrix
     return this->score;
 }
 
-int StdElement::bottom() {
-    return this->bottom_out;
+int StdElement::getBottom() {
+    return this->bottom;
 }
 
-StdProc::StdProc(string &S, string &T) {
-    this->S_len = S.length();
-    this->T_len = T.length();
-    this->T_root = new DNode;
+int StdElement::getScore() {
+    return this->score;
+}
 
-    for (int i = 0; i < S_len; i++) {
-        StdElement pe = StdElement(S[i]);
+StdProc::StdProc(char *X, int X_len, char *Y, int Y_len) {
+    this->X      = X;
+    this->Y      = Y;
+    this->X_len  = X_len;
+    this->Y_len  = Y_len;
+    this->Y_root = new DNode;
+
+    this->score_matrix = new int[X_len*Y_len];
+
+    for (int i = 0; i < X_len; i++) {
+        StdElement pe = StdElement(X[i]);
         this->pe_array.emplace_back(pe);
     }
 
-    this->T_root->base = T[0];
-    this->T_root->next = nullptr;
+    this->Y_root->base = Y[0];
+    this->Y_root->next = nullptr;
 
-    DNode *curr_node = this->T_root;
+    DNode *curr_node = this->Y_root;
 
-    for (auto i = 1; i < T_len-1; i++) {
+    for (auto i = 1; i < Y_len; i++) {
         auto *temp = new DNode;
-        temp->base = T[i];
+        temp->base = Y[i];
         temp->next = nullptr;
         curr_node->next = temp;
         curr_node = temp;
     }
 
-    curr_node->next = this->T_root;
+    curr_node->next = this->Y_root;
 }
 
 void StdProc::process() {
-    //int T_pos = 0;
-    int score_buffer[S_len+1];
-    T_shift_reg.push_back(T_root->base);
+    int score_buffer[X_len+1];
+    Y_shift_reg.push_back(Y_root->base);
     int shift_reg_size = 1;
 
-    for (int i = 0; i < S_len+1; i++) {
+    for (int i = 0; i < X_len+1; i++) {
         score_buffer[i] = 0;
     }
 
@@ -95,62 +109,118 @@ void StdProc::process() {
     // PE 3                                []
 
     // Starting to operate first PEs
-    // 1 PE, 2 PEs in parallel, 3 PEs in parallel ... < S_len PEs in parallel
-    while (shift_reg_size < this->S_len) {
-        cout << endl << "Initial run No. " << shift_reg_size << endl;
-        for (int j = 0; j < shift_reg_size; j++) {
-            int top_in = j == 0 ? 0 : pe_array[j-1].bottom();
+    // 1 PE, 2 PEs in parallel, 3 PEs in parallel ... < X_len PEs in parallel
+    while (shift_reg_size < this->X_len) {
+        // Debug
+        // cout << endl << "Initial run No. " << shift_reg_size << endl;
 
-            score_buffer[j] = pe_array[j].align(T_shift_reg[shift_reg_size-j-1], top_in);
-            score_matrix[j][shift_reg_size-j-1] = score_buffer[j];
+        for (int j = 0; j < shift_reg_size; j++) {
+            int top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
+
+            score_buffer[j] = pe_array[j].align(Y_shift_reg[shift_reg_size-j-1], top_in);
+            score_matrix[(j*Y_len)+(shift_reg_size-j-1)] = score_buffer[j];
         }
 
-        T_root = T_root->next;
-        T_shift_reg.push_back(T_root->base);
-        shift_reg_size = int(T_shift_reg.size());
+        Y_root = Y_root->next;
+        Y_shift_reg.push_back(Y_root->base);
+        shift_reg_size = int(Y_shift_reg.size());
     }
 
     // At this stage, all PEs are running
-    // length(PE_array) == S_len
-    for (int i = 0; i < T_len; i++) {
-        cout << endl << "Full run No. " << i << endl;
-        for (int j = 0; j < shift_reg_size; j++) {
-            int top_in = j == 0 ? 0 : pe_array[j-1].bottom();
+    // length(PE_array) == X_len
+    for (int i = 0; i < Y_len - shift_reg_size + 1; i++) {
+        // Debug
+        // cout << endl << "Full run No. " << i << endl;
 
-            score_buffer[j] = pe_array[j].align(T_shift_reg[shift_reg_size-j-1], top_in);
-            score_matrix[j][shift_reg_size+i-j-1] = score_buffer[j];
+        for (int j = 0; j < shift_reg_size; j++) {
+            int top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
+
+            score_buffer[j] = pe_array[j].align(Y_shift_reg[shift_reg_size-j-1], top_in);
+            score_matrix[(j*Y_len)+(shift_reg_size+i-j-1)] = score_buffer[j];
         }
 
-        T_root = T_root->next;
-        T_shift_reg.push_back(T_root->base);
-        T_shift_reg.erase(T_shift_reg.begin());
+        Y_root = Y_root->next;
+        Y_shift_reg.push_back(Y_root->base);
+        Y_shift_reg.erase(Y_shift_reg.begin());
+    }
+
+    // At this stage, remaining scores are calculated
+    // X_len PEs operate, X_len-1 PEs operate, ... 1 PE operates, halt.
+    int start_row = 1;
+    for (int i = 1; i < shift_reg_size; i++) {
+        // Debug
+        // cout << endl << "Finishing run No. " << i << endl;
+
+        for (int j = start_row; j < shift_reg_size; j++) {
+            int top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
+
+            score_buffer[j] = pe_array[j].align(Y_shift_reg[shift_reg_size-j-1], top_in);
+            score_matrix[(j*Y_len)+(shift_reg_size+i-j-1)] = score_buffer[j];
+        }
+        start_row++;
+
+        Y_root = Y_root->next;
+        Y_shift_reg.erase(Y_shift_reg.begin());
     }
 }
 
-int main() {
-    ifstream in;
-    in.open("dna_test.txt");
-    string S, T;
-    getline(in, T);
-    getline(in, S);
-    in.close();
-
-    StdProc p = StdProc(S, T);
-    p.process();
-
+void StdProc::print() {
     cout << endl << endl << "  | ";
-    for (int k = 0; k < 16; ++k) {
-        cout << T[k] << " | ";
+    for (int k = 0; k < Y_len; ++k) {
+        cout << Y[k] << " | ";
     }
     cout << endl;
 
-    for (int i = 0; i < 16; i++) {
-        cout << S[i] << " | ";
-        for (int j = 0; j < 16; j++) {
-            cout << p.score_matrix[i][j] << " | ";
+    for (int i = 0; i < X_len; i++) {
+        cout << X[i] << " | ";
+        for (int j = 0; j < Y_len; j++) {
+            cout << score_matrix[(i*Y_len)+j] << " | ";
         }
         cout << endl;
     }
+}
+
+int main(int argc, char *argv[]) {
+    char *baseseq;
+    char *streamseq;
+
+    if (argc == 3) {
+        baseseq = argv[1];
+        streamseq = argv[2];
+    } else {
+        printf("Wrong arguments, aborting");
+        exit(1);
+    }
+
+    struct stat st;
+    stat(baseseq, &st);
+    auto BASELEN = (int) st.st_size;
+    stat(streamseq, &st);
+    auto STREAMLEN = (int) st.st_size;
+
+    if (STREAMLEN > 1200000) {
+        printf("Stream sequence too long to process, max 1,200,000 bases");
+        exit(1);
+    }
+
+    int fd_x = open(baseseq, O_RDONLY, 0);
+    int fd_y = open(streamseq, O_RDONLY, 0);
+    assert (fd_x != -1 && fd_y != -1);
+
+    auto *seq_X = (char *) mmap(nullptr, BASELEN * sizeof(char), PROT_READ, MAP_PRIVATE | MAP_POPULATE, fd_x, 0);
+    auto *seq_Y = (char *) mmap(nullptr, STREAMLEN * sizeof(char), PROT_READ, MAP_PRIVATE | MAP_POPULATE, fd_y, 0);
+    assert(seq_X != MAP_FAILED && seq_Y != MAP_FAILED);
+
+    StdProc p = StdProc(seq_X, BASELEN, seq_Y, STREAMLEN);
+    p.process();
+    p.print();
+
+    int fin_x = munmap(seq_X, BASELEN * sizeof(char));
+    int fin_y = munmap(seq_Y, STREAMLEN * sizeof(char));
+    assert (fin_x == 0 && fin_y == 0);
+
+    close(fd_x);
+    close(fd_y);
 
     return 0;
 }

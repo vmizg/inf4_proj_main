@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/vytas/INF4/C/inf4_proj_dev_C/main.c" "/home/vytas/INF4/C/inf4_proj_dev_C/cmake-build-debug/CMakeFiles/inf4_proj_dev_C.dir/main.c.o"
+  "/home/vytas/INF4/inf4_proj_main/inf4_proj_dev_C/main.c" "/home/vytas/INF4/inf4_proj_main/inf4_proj_dev_C/cmake-build-debug/CMakeFiles/inf4_proj_dev_C.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

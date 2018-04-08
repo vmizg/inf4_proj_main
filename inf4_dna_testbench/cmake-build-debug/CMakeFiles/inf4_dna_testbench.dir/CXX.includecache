@@ -19,6 +19,16 @@ fstream
 -
 vector
 -
+unistd.h
+-
+fcntl.h
+-
+sys/mman.h
+-
+sys/stat.h
+-
+cassert
+-
 align.h
 /home/vytas/INF4/inf4_dna_testbench/align.h
 
