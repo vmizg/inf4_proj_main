@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/inf4_dna_testbench.dir/main.cpp.o  -o inf4_dna_testbench 

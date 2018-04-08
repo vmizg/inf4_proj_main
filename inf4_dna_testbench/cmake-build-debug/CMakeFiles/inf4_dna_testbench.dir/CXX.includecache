@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vytas/INF4/inf4_dna_testbench/align.h
+string
+-
+vector
+-
+
+/home/vytas/INF4/inf4_dna_testbench/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+align.h
+/home/vytas/INF4/inf4_dna_testbench/align.h
+
