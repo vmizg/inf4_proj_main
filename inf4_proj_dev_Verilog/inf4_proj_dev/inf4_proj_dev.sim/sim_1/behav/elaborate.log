@@ -1,0 +1,28 @@
+Vivado Simulator 2015.4
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto e4740ae897dd4904b9588b83af9c0453 --debug typical --relax --mt 8 -L xil_defaultlib -L fifo_generator_v13_0_1 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_8 -L generic_baseblocks_v2_1_0 -L axi_infrastructure_v1_1_0 -L axi_register_slice_v2_1_7 -L axi_data_fifo_v2_1_6 -L axi_crossbar_v2_1_8 -L axi_protocol_converter_v2_1_7 -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_sw_proc_behav xil_defaultlib.tb_sw_proc xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module xil_defaultlib.sw_pe
+Compiling architecture behavioral of entity fifo_generator_v13_0_1.fifo_generator_v13_0_1_bhv_ss [\fifo_generator_v13_0_1_bhv_ss("...]
+Compiling architecture behavioral of entity fifo_generator_v13_0_1.fifo_generator_v13_0_1_conv [\fifo_generator_v13_0_1_conv(1,0...]
+Compiling architecture behavioral of entity fifo_generator_v13_0_1.fifo_generator_vhdl_beh [\fifo_generator_vhdl_beh(1,0,9,"...]
+Compiling architecture xilinx of entity fifo_generator_v13_0_1.fifo_generator_v13_0_1 [\fifo_generator_v13_0_1(1,0,9,"B...]
+Compiling architecture fifo_32x512_arch of entity xil_defaultlib.fifo_32x512 [fifo_32x512_default]
+Compiling module xil_defaultlib.fifo_shift_2x32
+Compiling module xil_defaultlib.ssd_driver
+Compiling module xil_defaultlib.sw_proc_default
+Compiling module xil_defaultlib.tb_sw_proc
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_sw_proc_behav

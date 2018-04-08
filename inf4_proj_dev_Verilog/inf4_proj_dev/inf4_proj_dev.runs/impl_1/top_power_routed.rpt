@@ -1,0 +1,545 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date             : Sat Apr  7 19:34:45 2018
+| Host             : 640-G1 running 64-bit Ubuntu 17.10
+| Command          : 
+| Design           : top
+| Device           : xc7z010clg400-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 2.142 |
+| Dynamic (W)              | 2.004 |
+| Device Static (W)        | 0.139 |
+| Total Off-Chip Power (W) | 0.008 |
+| Effective TJA (C/W)      | 11.5  |
+| Max Ambient (C)          | 60.4  |
+| Junction Temperature (C) | 49.6  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.026 |        8 |       --- |             --- |
+| Slice Logic              |     0.018 |    39597 |       --- |             --- |
+|   LUT as Logic           |     0.016 |    14853 |     17600 |           84.39 |
+|   CARRY4                 |     0.002 |     2007 |      4400 |           45.61 |
+|   Register               |    <0.001 |    14892 |     35200 |           42.31 |
+|   F7/F8 Muxes            |    <0.001 |      285 |     17600 |            1.62 |
+|   LUT as Shift Register  |    <0.001 |       73 |      6000 |            1.22 |
+|   LUT as Distributed RAM |    <0.001 |      120 |      6000 |            2.00 |
+|   Others                 |     0.000 |      812 |       --- |             --- |
+| Signals                  |     0.023 |    22505 |       --- |             --- |
+| Block RAM                |     0.003 |      3.5 |        60 |            5.83 |
+| MMCM                     |     0.105 |        1 |         2 |           50.00 |
+| I/O                      |     0.305 |       93 |       100 |           93.00 |
+| PS7                      |     1.516 |        1 |       --- |             --- |
+| Static Power             |     0.139 |          |           |                 |
+| Total                    |     2.134 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.080 |       0.071 |      0.009 |
+| Vccaux    |       1.800 |     0.075 |       0.063 |      0.012 |
+| Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.743 |       0.707 |      0.036 |
+| Vccpaux   |       1.800 |     0.061 |       0.050 |      0.010 |
+| Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.458 |       0.456 |      0.002 |
+| Vcco_mio0 |       3.300 |     0.003 |       0.002 |      0.001 |
+| Vcco_mio1 |       1.800 |     0.003 |       0.002 |      0.001 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++---------------------+---------------------------------------------------------------------------------------------+-----------------+
+| Clock               | Domain                                                                                      | Constraint (ns) |
++---------------------+---------------------------------------------------------------------------------------------+-----------------+
+| clk_fpga_1          | xillybus_ins/system_i/vivado_system_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]      |            10.0 |
+| gclk                | clk_100                                                                                     |             8.0 |
+| vga_clk_ins/clk_fb  | xillybus_ins/system_i/vivado_system_i/xillyvga_0/inst/xillyvga_core_ins/vga_clk_ins/clk_fb  |            40.0 |
+| vga_clk_ins/clkout0 | xillybus_ins/system_i/vivado_system_i/xillyvga_0/inst/xillyvga_core_ins/vga_clk_ins/clkout0 |             3.1 |
+| vga_clk_ins/clkout1 | xillybus_ins/system_i/vivado_system_i/xillyvga_0/inst/xillyvga_core_ins/vga_clk_ins/clkout1 |            15.4 |
+| vga_clk_ins/clkout2 | xillybus_ins/system_i/vivado_system_i/xillyvga_0/inst/xillyvga_core_ins/vga_clk_ins/clkout2 |            15.4 |
++---------------------+---------------------------------------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++---------------------------------------------------------------+-----------+
+| Name                                                          | Power (W) |
++---------------------------------------------------------------+-----------+
+| top                                                           |     1.995 |
+|   PS_GPIO_IOBUF[0]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[10]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[11]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[12]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[13]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[14]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[15]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[16]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[17]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[18]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[19]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[1]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[20]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[21]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[22]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[23]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[24]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[25]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[26]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[27]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[28]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[29]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[2]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[30]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[31]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[32]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[33]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[34]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[35]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[36]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[37]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[38]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[39]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[3]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[40]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[41]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[42]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[43]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[44]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[45]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[46]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[47]_inst                                      |     0.002 |
+|   PS_GPIO_IOBUF[4]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[5]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[6]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[7]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[8]_inst                                       |     0.002 |
+|   PS_GPIO_IOBUF[9]_inst                                       |     0.002 |
+|   u_sw_proc                                                   |     0.036 |
+|     fifo_32_SC                                                |    <0.001 |
+|       U0                                                      |    <0.001 |
+|         inst_fifo_gen                                         |    <0.001 |
+|           gconvfifo.rf                                        |    <0.001 |
+|             grf.rf                                            |    <0.001 |
+|               gntv_or_sync_fifo.gl0.rd                        |    <0.001 |
+|                 grss.rsts                                     |    <0.001 |
+|                   c1                                          |    <0.001 |
+|                   c2                                          |    <0.001 |
+|                 rpntr                                         |    <0.001 |
+|               gntv_or_sync_fifo.gl0.wr                        |    <0.001 |
+|                 gwss.wsts                                     |    <0.001 |
+|                   c0                                          |    <0.001 |
+|                   c1                                          |    <0.001 |
+|                 wpntr                                         |    <0.001 |
+|               gntv_or_sync_fifo.mem                           |    <0.001 |
+|                 gbm.gbmg.gbmga.ngecc.bmg                      |    <0.001 |
+|                   inst_blk_mem_gen                            |    <0.001 |
+|                     gnativebmg.native_blk_mem_gen             |    <0.001 |
+|                       valid.cstr                              |    <0.001 |
+|                         ramloop[0].ram.r                      |    <0.001 |
+|                           prim_noinit.ram                     |    <0.001 |
+|     fifo_32_Y                                                 |    <0.001 |
+|       fifo_32                                                 |    <0.001 |
+|         U0                                                    |    <0.001 |
+|           inst_fifo_gen                                       |    <0.001 |
+|             gconvfifo.rf                                      |    <0.001 |
+|               grf.rf                                          |    <0.001 |
+|                 gntv_or_sync_fifo.gl0.rd                      |    <0.001 |
+|                   grss.rsts                                   |    <0.001 |
+|                     c1                                        |    <0.001 |
+|                     c2                                        |    <0.001 |
+|                   rpntr                                       |    <0.001 |
+|                 gntv_or_sync_fifo.gl0.wr                      |    <0.001 |
+|                   gwss.wsts                                   |    <0.001 |
+|                     c0                                        |    <0.001 |
+|                     c1                                        |    <0.001 |
+|                   wpntr                                       |    <0.001 |
+|                 gntv_or_sync_fifo.mem                         |    <0.001 |
+|                   gbm.gbmg.gbmga.ngecc.bmg                    |    <0.001 |
+|                     inst_blk_mem_gen                          |    <0.001 |
+|                       gnativebmg.native_blk_mem_gen           |    <0.001 |
+|                         valid.cstr                            |    <0.001 |
+|                           ramloop[0].ram.r                    |    <0.001 |
+|                             prim_noinit.ram                   |    <0.001 |
+|     pe_[100].pe                                               |    <0.001 |
+|     pe_[101].pe                                               |    <0.001 |
+|     pe_[102].pe                                               |    <0.001 |
+|     pe_[103].pe                                               |    <0.001 |
+|     pe_[104].pe                                               |    <0.001 |
+|     pe_[105].pe                                               |    <0.001 |
+|     pe_[106].pe                                               |    <0.001 |
+|     pe_[107].pe                                               |    <0.001 |
+|     pe_[108].pe                                               |    <0.001 |
+|     pe_[109].pe                                               |    <0.001 |
+|     pe_[10].pe                                                |    <0.001 |
+|     pe_[110].pe                                               |    <0.001 |
+|     pe_[111].pe                                               |    <0.001 |
+|     pe_[112].pe                                               |    <0.001 |
+|     pe_[113].pe                                               |    <0.001 |
+|     pe_[114].pe                                               |    <0.001 |
+|     pe_[115].pe                                               |    <0.001 |
+|     pe_[116].pe                                               |    <0.001 |
+|     pe_[117].pe                                               |    <0.001 |
+|     pe_[118].pe                                               |    <0.001 |
+|     pe_[119].pe                                               |    <0.001 |
+|     pe_[11].pe                                                |    <0.001 |
+|     pe_[120].pe                                               |    <0.001 |
+|     pe_[121].pe                                               |    <0.001 |
+|     pe_[122].pe                                               |    <0.001 |
+|     pe_[123].pe                                               |    <0.001 |
+|     pe_[124].pe                                               |    <0.001 |
+|     pe_[125].pe                                               |    <0.001 |
+|     pe_[126].pe                                               |    <0.001 |
+|     pe_[127].pe                                               |    <0.001 |
+|     pe_[128].pe                                               |    <0.001 |
+|     pe_[129].pe                                               |    <0.001 |
+|     pe_[12].pe                                                |    <0.001 |
+|     pe_[130].pe                                               |    <0.001 |
+|     pe_[131].pe                                               |    <0.001 |
+|     pe_[132].pe                                               |    <0.001 |
+|     pe_[133].pe                                               |    <0.001 |
+|     pe_[134].pe                                               |    <0.001 |
+|     pe_[135].pe                                               |    <0.001 |
+|     pe_[136].pe                                               |    <0.001 |
+|     pe_[137].pe                                               |    <0.001 |
+|     pe_[138].pe                                               |    <0.001 |
+|     pe_[139].pe                                               |    <0.001 |
+|     pe_[13].pe                                                |    <0.001 |
+|     pe_[140].pe                                               |    <0.001 |
+|     pe_[141].pe                                               |    <0.001 |
+|     pe_[142].pe                                               |    <0.001 |
+|     pe_[143].pe                                               |    <0.001 |
+|     pe_[144].pe                                               |    <0.001 |
+|     pe_[145].pe                                               |    <0.001 |
+|     pe_[146].pe                                               |    <0.001 |
+|     pe_[147].pe                                               |    <0.001 |
+|     pe_[148].pe                                               |    <0.001 |
+|     pe_[149].pe                                               |    <0.001 |
+|     pe_[14].pe                                                |    <0.001 |
+|     pe_[150].pe                                               |    <0.001 |
+|     pe_[151].pe                                               |    <0.001 |
+|     pe_[152].pe                                               |    <0.001 |
+|     pe_[153].pe                                               |    <0.001 |
+|     pe_[154].pe                                               |    <0.001 |
+|     pe_[155].pe                                               |    <0.001 |
+|     pe_[156].pe                                               |    <0.001 |
+|     pe_[157].pe                                               |    <0.001 |
+|     pe_[158].pe                                               |    <0.001 |
+|     pe_[159].pe                                               |    <0.001 |
+|     pe_[15].pe                                                |    <0.001 |
+|     pe_[16].pe                                                |    <0.001 |
+|     pe_[17].pe                                                |    <0.001 |
+|     pe_[18].pe                                                |    <0.001 |
+|     pe_[19].pe                                                |    <0.001 |
+|     pe_[1].pe                                                 |    <0.001 |
+|     pe_[20].pe                                                |    <0.001 |
+|     pe_[21].pe                                                |    <0.001 |
+|     pe_[22].pe                                                |    <0.001 |
+|     pe_[23].pe                                                |    <0.001 |
+|     pe_[24].pe                                                |    <0.001 |
+|     pe_[25].pe                                                |    <0.001 |
+|     pe_[26].pe                                                |    <0.001 |
+|     pe_[27].pe                                                |    <0.001 |
+|     pe_[28].pe                                                |    <0.001 |
+|     pe_[29].pe                                                |    <0.001 |
+|     pe_[2].pe                                                 |    <0.001 |
+|     pe_[30].pe                                                |    <0.001 |
+|     pe_[31].pe                                                |    <0.001 |
+|     pe_[32].pe                                                |    <0.001 |
+|     pe_[33].pe                                                |    <0.001 |
+|     pe_[34].pe                                                |    <0.001 |
+|     pe_[35].pe                                                |    <0.001 |
+|     pe_[36].pe                                                |    <0.001 |
+|     pe_[37].pe                                                |    <0.001 |
+|     pe_[38].pe                                                |    <0.001 |
+|     pe_[39].pe                                                |    <0.001 |
+|     pe_[3].pe                                                 |    <0.001 |
+|     pe_[40].pe                                                |    <0.001 |
+|     pe_[41].pe                                                |    <0.001 |
+|     pe_[42].pe                                                |    <0.001 |
+|     pe_[43].pe                                                |    <0.001 |
+|     pe_[44].pe                                                |    <0.001 |
+|     pe_[45].pe                                                |    <0.001 |
+|     pe_[46].pe                                                |    <0.001 |
+|     pe_[47].pe                                                |    <0.001 |
+|     pe_[48].pe                                                |    <0.001 |
+|     pe_[49].pe                                                |    <0.001 |
+|     pe_[4].pe                                                 |    <0.001 |
+|     pe_[50].pe                                                |    <0.001 |
+|     pe_[51].pe                                                |    <0.001 |
+|     pe_[52].pe                                                |    <0.001 |
+|     pe_[53].pe                                                |    <0.001 |
+|     pe_[54].pe                                                |    <0.001 |
+|     pe_[55].pe                                                |    <0.001 |
+|     pe_[56].pe                                                |    <0.001 |
+|     pe_[57].pe                                                |    <0.001 |
+|     pe_[58].pe                                                |    <0.001 |
+|     pe_[59].pe                                                |    <0.001 |
+|     pe_[5].pe                                                 |    <0.001 |
+|     pe_[60].pe                                                |    <0.001 |
+|     pe_[61].pe                                                |    <0.001 |
+|     pe_[62].pe                                                |    <0.001 |
+|     pe_[63].pe                                                |    <0.001 |
+|     pe_[64].pe                                                |    <0.001 |
+|     pe_[65].pe                                                |    <0.001 |
+|     pe_[66].pe                                                |    <0.001 |
+|     pe_[67].pe                                                |    <0.001 |
+|     pe_[68].pe                                                |    <0.001 |
+|     pe_[69].pe                                                |    <0.001 |
+|     pe_[6].pe                                                 |    <0.001 |
+|     pe_[70].pe                                                |    <0.001 |
+|     pe_[71].pe                                                |    <0.001 |
+|     pe_[72].pe                                                |    <0.001 |
+|     pe_[73].pe                                                |    <0.001 |
+|     pe_[74].pe                                                |    <0.001 |
+|     pe_[75].pe                                                |    <0.001 |
+|     pe_[76].pe                                                |    <0.001 |
+|     pe_[77].pe                                                |    <0.001 |
+|     pe_[78].pe                                                |    <0.001 |
+|     pe_[79].pe                                                |    <0.001 |
+|     pe_[7].pe                                                 |    <0.001 |
+|     pe_[80].pe                                                |    <0.001 |
+|     pe_[81].pe                                                |    <0.001 |
+|     pe_[82].pe                                                |    <0.001 |
+|     pe_[83].pe                                                |    <0.001 |
+|     pe_[84].pe                                                |    <0.001 |
+|     pe_[85].pe                                                |    <0.001 |
+|     pe_[86].pe                                                |    <0.001 |
+|     pe_[87].pe                                                |    <0.001 |
+|     pe_[88].pe                                                |    <0.001 |
+|     pe_[89].pe                                                |    <0.001 |
+|     pe_[8].pe                                                 |    <0.001 |
+|     pe_[90].pe                                                |    <0.001 |
+|     pe_[91].pe                                                |    <0.001 |
+|     pe_[92].pe                                                |    <0.001 |
+|     pe_[93].pe                                                |    <0.001 |
+|     pe_[94].pe                                                |    <0.001 |
+|     pe_[95].pe                                                |    <0.001 |
+|     pe_[96].pe                                                |    <0.001 |
+|     pe_[97].pe                                                |    <0.001 |
+|     pe_[98].pe                                                |    <0.001 |
+|     pe_[99].pe                                                |    <0.001 |
+|     pe_[9].pe                                                 |    <0.001 |
+|     pe_init                                                   |    <0.001 |
+|     u_ssd_driver                                              |    <0.001 |
+|   xillybus_ins                                                |     1.838 |
+|     system_i                                                  |     1.822 |
+|       vivado_system_i                                         |     1.822 |
+|         processing_system7_0                                  |     1.521 |
+|           inst                                                |     1.521 |
+|             xlnx_axi_wrshim_unwrap_inst_gp0                   |     0.000 |
+|             xlnx_axi_wrshim_unwrap_inst_gp1                   |     0.000 |
+|         processing_system7_0_axi_periph                       |     0.003 |
+|           s00_couplers                                        |     0.003 |
+|             auto_pc                                           |     0.003 |
+|               inst                                            |     0.003 |
+|                 gen_axilite.gen_b2s_conv.axilite_b2s          |     0.003 |
+|                   RD.ar_channel_0                             |    <0.001 |
+|                     ar_cmd_fsm_0                              |    <0.001 |
+|                     cmd_translator_0                          |    <0.001 |
+|                       incr_cmd_0                              |    <0.001 |
+|                       wrap_cmd_0                              |    <0.001 |
+|                   RD.r_channel_0                              |    <0.001 |
+|                     rd_data_fifo_0                            |    <0.001 |
+|                     transaction_fifo_0                        |    <0.001 |
+|                   SI_REG                                      |    <0.001 |
+|                     ar_pipe                                   |    <0.001 |
+|                     aw_pipe                                   |    <0.001 |
+|                     b_pipe                                    |    <0.001 |
+|                     r_pipe                                    |    <0.001 |
+|                   WR.aw_channel_0                             |    <0.001 |
+|                     aw_cmd_fsm_0                              |    <0.001 |
+|                     cmd_translator_0                          |    <0.001 |
+|                       incr_cmd_0                              |    <0.001 |
+|                       wrap_cmd_0                              |    <0.001 |
+|                   WR.b_channel_0                              |    <0.001 |
+|                     bid_fifo_0                                |    <0.001 |
+|                     bresp_fifo_0                              |    <0.001 |
+|           xbar                                                |    <0.001 |
+|             inst                                              |    <0.001 |
+|               gen_sasd.crossbar_sasd_0                        |    <0.001 |
+|                 addr_arbiter_inst                             |    <0.001 |
+|                 gen_decerr.decerr_slave_inst                  |    <0.001 |
+|                 reg_slice_r                                   |    <0.001 |
+|                 splitter_ar                                   |    <0.001 |
+|                 splitter_aw                                   |    <0.001 |
+|         rst_processing_system7_0_100M                         |    <0.001 |
+|           U0                                                  |    <0.001 |
+|             EXT_LPF                                           |    <0.001 |
+|               ACTIVE_LOW_EXT.ACT_LO_EXT                       |    <0.001 |
+|             SEQ                                               |    <0.001 |
+|               SEQ_COUNTER                                     |    <0.001 |
+|         xillybus_ip_0                                         |    <0.001 |
+|           inst                                                |    <0.001 |
+|         xillybus_lite_0                                       |    <0.001 |
+|           inst                                                |    <0.001 |
+|         xillyvga_0                                            |     0.298 |
+|           inst                                                |     0.298 |
+|             xillyvga_core_ins                                 |     0.298 |
+|               vga_fifo_wrapper_ins/vga_fifo                   |     0.001 |
+|                 U0                                            |     0.001 |
+|                   inst_fifo_gen                               |     0.001 |
+|                     gconvfifo.rf                              |     0.001 |
+|                       grf.rf                                  |     0.001 |
+|                         gntv_or_sync_fifo.gcx.clkx            |    <0.001 |
+|                           gsync_stage[1].rd_stg_inst          |    <0.001 |
+|                           gsync_stage[1].wr_stg_inst          |    <0.001 |
+|                           gsync_stage[2].rd_stg_inst          |    <0.001 |
+|                           gsync_stage[2].wr_stg_inst          |    <0.001 |
+|                         gntv_or_sync_fifo.gl0.rd              |    <0.001 |
+|                           gras.rsts                           |    <0.001 |
+|                             c0                                |    <0.001 |
+|                             c1                                |    <0.001 |
+|                           rpntr                               |    <0.001 |
+|                         gntv_or_sync_fifo.gl0.wr              |    <0.001 |
+|                           gwas.gpf.wrpf                       |    <0.001 |
+|                           gwas.wsts                           |    <0.001 |
+|                             c1                                |    <0.001 |
+|                             c2                                |    <0.001 |
+|                           wpntr                               |    <0.001 |
+|                         gntv_or_sync_fifo.mem                 |    <0.001 |
+|                           gbm.gbmg.gbmga.ngecc.bmg            |    <0.001 |
+|                             inst_blk_mem_gen                  |    <0.001 |
+|                               gnativebmg.native_blk_mem_gen   |    <0.001 |
+|                                 valid.cstr                    |    <0.001 |
+|                                   ramloop[0].ram.r            |    <0.001 |
+|                                     prim_noinit.ram           |    <0.001 |
+|                         rstblk                                |    <0.001 |
+|         xlconcat_0                                            |     0.000 |
+|     xillybus_core_ins                                         |     0.016 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram1  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram2  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram3  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram4  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram51 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram52 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram61 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram62 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram1  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram2  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram3  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram4  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram51 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram52 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram61 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram1/Mram_fifo_ram62 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram1  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram2  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram3  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram4  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram51 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram52 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram61 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram2/Mram_fifo_ram62 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram1  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram2  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram3  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram4  |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram51 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram52 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram61 |    <0.001 |
+|       axi4_send_dma_ins/xillybus_wr_fifo/ram3/Mram_fifo_ram62 |    <0.001 |
+|       msg_buf_ins                                             |    <0.001 |
+|       unitr_1_ins/Mram_unitr_1_offsets1                       |    <0.001 |
+|       unitr_1_ins/Mram_unitr_1_offsets2                       |    <0.001 |
+|       unitr_1_ins/Mram_unitr_1_offsets31                      |    <0.001 |
+|       unitr_1_ins/Mram_unitr_1_offsets32                      |    <0.001 |
+|       unitr_1_ins/Mram_unitr_1_offsets33                      |    <0.001 |
+|       unitr_2_ins/Mram_unitr_2_offsets1                       |    <0.001 |
+|       unitr_2_ins/Mram_unitr_2_offsets2                       |    <0.001 |
+|       unitr_2_ins/Mram_unitr_2_offsets31                      |    <0.001 |
+|       unitr_2_ins/Mram_unitr_2_offsets32                      |    <0.001 |
+|       unitr_2_ins/Mram_unitr_2_offsets33                      |    <0.001 |
++---------------------------------------------------------------+-----------+
+
+

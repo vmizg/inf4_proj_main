@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Mar  2 15:27:37 2018
+# Process ID: 2887
+# Current directory: /home/vytas/INF4/Verilog/init_xillybus/verilog
+# Command line: vivado
+# Log file: /home/vytas/INF4/Verilog/init_xillybus/verilog/vivado.log
+# Journal file: /home/vytas/INF4/Verilog/init_xillybus/verilog/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source xillydemo_vivado.tcl
+source xillydemo-vivado.tcl
+file mkdir /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+remove_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v
+file delete -force /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v
+remove_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+file delete -force /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shift_2x32.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shift_2x32.v
+file mkdir /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sim_1/new/tb_sw_final.v w ]
+add_files -fileset sim_1 /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sim_1/new/tb_sw_final.v
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_final [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1

@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl fifo_generator_v13_0_1  "../../../inf4_proj_dev.ip_user_files/ipstatic/fifo_generator_v13_0_1/simulation/fifo_generator_vhdl_beh.vhd"
+vhdl fifo_generator_v13_0_1  "../../../inf4_proj_dev.ip_user_files/ipstatic/fifo_generator_v13_0_1/hdl/fifo_generator_v13_0_rfs.vhd"
+vhdl xil_defaultlib  "../../../../init_xillybus/vivado-essentials/vga_fifo/sim/vga_fifo.vhd"
+vhdl xil_defaultlib  "../../../../init_xillybus/vivado-essentials/fifo_32x512/sim/fifo_32x512.vhd"
+vhdl lib_cdc_v1_0_2  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/lib_cdc_v1_0_2/hdl/src/vhdl/cdc_sync.vhd"
+vhdl proc_sys_reset_v5_0_8  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0_8/hdl/src/vhdl/upcnt_n.vhd"
+vhdl proc_sys_reset_v5_0_8  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0_8/hdl/src/vhdl/sequence_psr.vhd"
+vhdl proc_sys_reset_v5_0_8  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0_8/hdl/src/vhdl/lpf.vhd"
+vhdl proc_sys_reset_v5_0_8  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/proc_sys_reset_v5_0_8/hdl/src/vhdl/proc_sys_reset.vhd"
+vhdl xil_defaultlib  "../../../inf4_proj_dev.ip_user_files/bd/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/sim/vivado_system_rst_processing_system7_0_100M_0.vhd"
+vhdl fifo_generator_v13_0_1  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/fifo_generator_v13_0_1/simulation/fifo_generator_vhdl_beh.vhd"
+vhdl fifo_generator_v13_0_1  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/fifo_generator_v13_0_1/hdl/fifo_generator_v13_0_rfs.vhd"
+vhdl fifo_generator_v13_0_1  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_0/fifo_generator_v13_0_1/simulation/fifo_generator_vhdl_beh.vhd"
+vhdl fifo_generator_v13_0_1  "../../../../init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_0/fifo_generator_v13_0_1/hdl/fifo_generator_v13_0_rfs.vhd"
+
+# Do not sort compile order
+nosort

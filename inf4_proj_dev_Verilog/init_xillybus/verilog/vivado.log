@@ -1,0 +1,245 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Mar  2 15:27:37 2018
+# Process ID: 2887
+# Current directory: /home/vytas/INF4/Verilog/init_xillybus/verilog
+# Command line: vivado
+# Log file: /home/vytas/INF4/Verilog/init_xillybus/verilog/vivado.log
+# Journal file: /home/vytas/INF4/Verilog/init_xillybus/verilog/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source xillydemo_vivado.tcl
+couldn't read file "xillydemo_vivado.tcl": no such file or directory
+source xillydemo-vivado.tcl
+# set origin_dir [file dirname [info script]]
+# if {[string first { } $origin_dir] >= 0} {
+# send_msg_id xillydemo-1 error "The path to the the project directory contains white space(s): \"$origin_dir\". This is known to cause problems with Vivado. Please move the project to a path without white spaces, and try again."
+# }
+# set proj_name inf4_proj_dev
+# set proj_dir "[file normalize $origin_dir/INF4/Verilog/inf4_proj_dev]"
+# set thepart "xc7z010clg400-1"
+# set essentials_dir "[file normalize "$origin_dir/../vivado-essentials"]"
+# create_project $proj_name "$proj_dir/"
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:arty-s7-50:part0:1.0 available at /opt/Xilinx/Vivado/2015.4/data/boards/board_files/arty-s7-50/B.0/board.xml as part xc7s50csga324-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at /opt/Xilinx/Vivado/2015.4/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+# set obj [get_projects $proj_name]
+# set_property "default_lib" "xil_defaultlib" $obj
+# set_property "part" $thepart $obj
+# set_property "simulator_language" "Mixed" $obj
+# set_property "source_mgmt_mode" "DisplayOnly" $obj
+# set_property target_language Verilog $obj
+# set_property "ip_repo_paths" "$essentials_dir/vivado-ip" [current_fileset]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado-ip'.
+# if {[string equal [get_filesets sources_1] ""]} {
+#   create_fileset -srcset sources_1
+# }
+# set obj [get_filesets sources_1]
+# set_property "edif_extra_search_paths" "[file normalize "$origin_dir/../cores"]" $obj
+# set_property "top" "xillydemo" $obj
+# set obj [get_filesets sources_1]
+# set files [list \
+#  $origin_dir/src/xillydemo.v \
+#  $origin_dir/src/smbus.v \
+#  $origin_dir/src/i2s_audio.v \
+#  $origin_dir/src/xillybus.v \
+#  $origin_dir/src/xillybus_core.v \
+#  $essentials_dir/system.v \
+#  $essentials_dir/vga_fifo/vga_fifo.xci \
+#  $essentials_dir/fifo_8x2048/fifo_8x2048.xci \
+#  $essentials_dir/fifo_32x512/fifo_32x512.xci \
+#  $essentials_dir/vivado_system/vivado_system.bd \
+# ]
+# add_files -norecurse -fileset $obj $files
+# upgrade_ip [get_ips]
+WARNING: [Coretcl 2-1044] No upgrade is available for 'fifo_32x512'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'fifo_8x2048'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vga_fifo'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_processing_system7_0_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_processing_system7_0_axi_periph_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_rst_processing_system7_0_100M_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xillybus_ip_0_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xillybus_lite_0_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xillyvga_0_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xlconcat_0_0'
+WARNING: [Coretcl 2-1042] No IP was identified for upgrade.
+# open_bd_design $essentials_dir/vivado_system/vivado_system.bd
+Adding component instance block -- xillybus:xillybus:xillybus_lite:1.0 - xillybus_lite_0
+Adding component instance block -- xillybus:xillybus:xillybus_ip:1.0 - xillybus_ip_0
+Adding component instance block -- xillybus:xillybus:xillyvga:1.0 - xillyvga_0
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Successfully read diagram <vivado_system> from BD file </home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/vivado_system.bd>
+open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 5916.305 ; gain = 93.578 ; free physical = 12044 ; free virtual = 22163
+# startgroup
+# apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins xillybus_ip_0/S_AXI]
+# apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins xillyvga_0/S_AXI]
+# apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins xillybus_lite_0/S_AXI]
+# set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_ip_0_reg0}]
+# set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_xillyvga_0_reg0}]
+# set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_lite_0_reg0}]
+# set_property offset 0x50000000 [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_ip_0_reg0}]
+# set_property offset 0x50001000 [get_bd_addr_segs {processing_system7_0/Data/SEG_xillyvga_0_reg0}]
+# set_property offset 0x50002000 [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_lite_0_reg0}]
+# endgroup
+# save_bd_design
+Wrote  : </home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/vivado_system.bd> 
+# close_bd_design vivado_system
+# if {[string equal [get_filesets constrs_1] ""]} {
+#   create_fileset -constrset constrs_1
+# }
+# set obj [get_filesets constrs_1]
+# add_files -fileset $obj -norecurse $essentials_dir/xillydemo.xdc
+# set obj [get_filesets constrs_1]
+# if {[string equal [get_filesets sim_1] ""]} {
+#   create_fileset -simset sim_1
+# }
+# set obj [get_filesets sim_1]
+# set obj [get_filesets sim_1]
+# set_property "top" "unknown" $obj
+# set_property "xsim.simulate.runtime" "1000 ns" $obj
+# set_property "xsim.simulate.uut" "UUT" $obj
+# if {[string equal [get_runs synth_1] ""]} {
+#   create_run -name synth_1 -part $thepart -flow {Vivado Synthesis 2013} -strategy "Vivado Synthesis Defaults" -constrset constrs_1
+# }
+# set obj [get_runs synth_1]
+# set_property "part" $thepart $obj
+# if {[string equal [get_runs impl_1] ""]} {
+#   create_run -name impl_1 -part $thepart -flow {Vivado Implementation 2013} -strategy "Vivado Implementation Defaults" -constrset constrs_1 -parent_run synth_1
+# }
+# set obj [get_runs impl_1]
+# set_property "part" $thepart $obj
+# set_property STEPS.ROUTE_DESIGN.TCL.POST "$essentials_dir/showstopper.tcl" $obj
+# set_msg_config -new_severity "INFO" -id {BD 41-968} -string {{xillybus_S_AXI} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-967} -string {{xillybus_ip_0/xillybus_M_AXI} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-967} -string {{xillybus_ip_0/xillybus_S_AXI} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-678} -string {{xillybus_S_AXI/Reg} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-1356} -string {{xillybus_S_AXI/Reg} }
+# set_msg_config -new_severity "INFO" -id {BD 41-759} -string {{xlconcat_0/In} }
+# set_msg_config -new_severity "INFO" -id {BD 41-759} -string {{xlconcat_0/In} }
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -ruleid {6}  -id {BD 41-759}  -string {{xlconcat_0/In}}  -new_severity {INFO} '. The existing rule will be replaced.
+# set_msg_config -new_severity "INFO" -id {Netlist 29-160} -string {{vivado_system_processing_system7} }
+# puts "INFO: Project created: $proj_name"
+INFO: Project created: inf4_proj_dev
+file mkdir /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+remove_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v
+file delete -force /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shifter_2x32.v
+remove_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+file delete -force /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_pe.v
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shift_2x32.v w ]
+add_files /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/shift_2x32.v
+file mkdir /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sim_1/new/tb_sw_final.v w ]
+add_files -fileset sim_1 /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sim_1/new/tb_sw_final.v
+set_property top tb_final [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_runs impl_1
+Adding component instance block -- xillybus:xillybus:xillybus_lite:1.0 - xillybus_lite_0
+Adding component instance block -- xillybus:xillybus:xillybus_ip:1.0 - xillybus_ip_0
+Adding component instance block -- xillybus:xillybus:xillyvga:1.0 - xillyvga_0
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Successfully read diagram <vivado_system> from BD file </home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/vivado_system.bd>
+INFO: [BD 41-968] AXI interface port /xillybus_S_AXI is not associated to any clock port. It may not work correctly. Please update ASSOCIATED_BUSIF parameter of a clock port to include this interface port.
+INFO: [BD 41-967] AXI interface pin /xillybus_ip_0/xillybus_M_AXI is not associated to any clock pin. It may not work correctly.
+INFO: [BD 41-967] AXI interface pin /xillybus_ip_0/xillybus_S_AXI is not associated to any clock pin. It may not work correctly.
+INFO: [BD 41-1356] Address block </xillybus_S_AXI/Reg> is not mapped into </xillybus_ip_0/xillybus_S_AXI>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_0/S_AXI_ACP(5) and /xillybus_ip_0/m_axi(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_0/S_AXI_ACP(5) and /xillybus_ip_0/m_axi(0)
+INFO: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/xlconcat_0/In0
+/xlconcat_0/In1
+/xlconcat_0/In2
+/xlconcat_0/In3
+/xlconcat_0/In4
+/xlconcat_0/In5
+/xlconcat_0/In6
+/xlconcat_0/In7
+/xlconcat_0/In8
+/xlconcat_0/In9
+/xlconcat_0/In10
+/xlconcat_0/In11
+/xlconcat_0/In12
+/xlconcat_0/In13
+
+Verilog Output written to : /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/hdl/vivado_system.v
+Verilog Output written to : /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/hdl/vivado_system_wrapper.v
+Wrote  : </home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/vivado_system.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xillybus_lite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xillybus_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xillyvga_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'vivado_system_xbar_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'vivado_system_xbar_0'...
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'vivado_system_xbar_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'vivado_system_xbar_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'vivado_system_auto_pc_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'vivado_system_auto_pc_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'vivado_system_auto_pc_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'vivado_system_auto_pc_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/hw_handoff/vivado_system.hwh
+Generated Block Design Tcl file /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/hw_handoff/vivado_system_bd.tcl
+Generated Hardware Definition File /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/hdl/vivado_system.hwdef
+[Fri Mar  2 15:33:43 2018] Launched synth_1...
+Run output will be captured here: /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/runme.log
+[Fri Mar  2 15:33:43 2018] Launched impl_1...
+Run output will be captured here: /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 2461 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/vytas/INF4/Verilog/init_xillybus/verilog/.Xil/Vivado-2887-640-G1/dcp/xillydemo_early.xdc]
+Finished Parsing XDC File [/home/vytas/INF4/Verilog/init_xillybus/verilog/.Xil/Vivado-2887-640-G1/dcp/xillydemo_early.xdc]
+Parsing XDC File [/home/vytas/INF4/Verilog/init_xillybus/verilog/.Xil/Vivado-2887-640-G1/dcp/xillydemo.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/xillydemo.xdc:8]
+INFO: [Timing 38-2] Deriving generated clocks [/home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/xillydemo.xdc:8]
+get_clocks: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 6733.090 ; gain = 456.508 ; free physical = 11170 ; free virtual = 21451
+INFO: [Constraints 18-632] set_output_delay: No clock object specified, the clocks will be automatically identified [/home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/xillydemo.xdc:15]
+Finished Parsing XDC File [/home/vytas/INF4/Verilog/init_xillybus/verilog/.Xil/Vivado-2887-640-G1/dcp/xillydemo.xdc]
+Parsing XDC File [/home/vytas/INF4/Verilog/init_xillybus/verilog/.Xil/Vivado-2887-640-G1/dcp/xillydemo_late.xdc]
+Finished Parsing XDC File [/home/vytas/INF4/Verilog/init_xillybus/verilog/.Xil/Vivado-2887-640-G1/dcp/xillydemo_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 6761.762 ; gain = 27.672 ; free physical = 11141 ; free virtual = 21422
+Restored from archive | CPU: 1.160000 secs | Memory: 24.567017 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 6761.762 ; gain = 27.672 ; free physical = 11141 ; free virtual = 21422
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 167 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 57 instances
+  RAM32M => RAM32M (RAMS32, RAMS32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32): 12 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 6 instances
+  RAM32X1S => RAM32X1S (RAMS32): 40 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 36 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 16 instances
+
+open_run: Time (s): cpu = 00:00:26 ; elapsed = 00:00:16 . Memory (MB): peak = 6894.078 ; gain = 698.496 ; free physical = 11054 ; free virtual = 21310
+launch_runs impl_1 -to_step write_bitstream
+[Fri Mar  2 15:39:32 2018] Launched impl_1...
+Run output will be captured here: /home/vytas/INF4/Verilog/init_xillybus/verilog/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  2 19:46:24 2018...

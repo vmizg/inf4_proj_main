@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_final_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_final" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="3944500000fs"></ZoomStartTime>
+      <ZoomEndTime time="4055800001fs"></ZoomEndTime>
+      <Cursor1Time time="3975200000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="53" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/bus_clk">
+      <obj_property name="ElementShortName">bus_clk</obj_property>
+      <obj_property name="ObjectShortName">bus_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/quiesce">
+      <obj_property name="ElementShortName">quiesce</obj_property>
+      <obj_property name="ObjectShortName">quiesce</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider875" type="divider">
+      <obj_property name="label">FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/sr_en">
+      <obj_property name="ElementShortName">sr_en</obj_property>
+      <obj_property name="ObjectShortName">sr_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y/data_in">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/data_in_valid">
+      <obj_property name="ElementShortName">data_in_valid</obj_property>
+      <obj_property name="ObjectShortName">data_in_valid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y/data_out">
+      <obj_property name="ElementShortName">data_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/data_out_valid">
+      <obj_property name="ElementShortName">data_out_valid</obj_property>
+      <obj_property name="ObjectShortName">data_out_valid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/fifo_full">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/sr_empty">
+      <obj_property name="ElementShortName">sr_empty</obj_property>
+      <obj_property name="ObjectShortName">sr_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/fifo_empty">
+      <obj_property name="ElementShortName">fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">fifo_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y/fifo_dout">
+      <obj_property name="ElementShortName">fifo_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y/shift_reg">
+      <obj_property name="ElementShortName">shift_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y/shift_counter">
+      <obj_property name="ElementShortName">shift_counter[4:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_counter[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y/read_stage">
+      <obj_property name="ElementShortName">read_stage[1:0]</obj_property>
+      <obj_property name="ObjectShortName">read_stage[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/data_in_wren">
+      <obj_property name="ElementShortName">data_in_wren</obj_property>
+      <obj_property name="ObjectShortName">data_in_wren</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/data_in_rden">
+      <obj_property name="ElementShortName">data_in_rden</obj_property>
+      <obj_property name="ObjectShortName">data_in_rden</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/data_ready">
+      <obj_property name="ElementShortName">data_ready</obj_property>
+      <obj_property name="ObjectShortName">data_ready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y/need_data">
+      <obj_property name="ElementShortName">need_data</obj_property>
+      <obj_property name="ObjectShortName">need_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider894" type="divider">
+      <obj_property name="label">END FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_w_write_32_wren">
+      <obj_property name="ElementShortName">user_w_write_32_wren</obj_property>
+      <obj_property name="ObjectShortName">user_w_write_32_wren</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_w_write_32_full">
+      <obj_property name="ElementShortName">user_w_write_32_full</obj_property>
+      <obj_property name="ObjectShortName">user_w_write_32_full</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/user_w_write_32_data">
+      <obj_property name="ElementShortName">user_w_write_32_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">user_w_write_32_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_w_write_32_open">
+      <obj_property name="ElementShortName">user_w_write_32_open</obj_property>
+      <obj_property name="ObjectShortName">user_w_write_32_open</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_r_read_32_rden">
+      <obj_property name="ElementShortName">user_r_read_32_rden</obj_property>
+      <obj_property name="ObjectShortName">user_r_read_32_rden</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_r_read_32_empty">
+      <obj_property name="ElementShortName">user_r_read_32_empty</obj_property>
+      <obj_property name="ObjectShortName">user_r_read_32_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/user_r_read_32_data">
+      <obj_property name="ElementShortName">user_r_read_32_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">user_r_read_32_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_r_read_32_eof">
+      <obj_property name="ElementShortName">user_r_read_32_eof</obj_property>
+      <obj_property name="ObjectShortName">user_r_read_32_eof</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/user_r_read_32_open">
+      <obj_property name="ElementShortName">user_r_read_32_open</obj_property>
+      <obj_property name="ObjectShortName">user_r_read_32_open</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/seq_X">
+      <obj_property name="ElementShortName">seq_X[0:49][1:0]</obj_property>
+      <obj_property name="ObjectShortName">seq_X[0:49][1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/TB_seq_y_mem">
+      <obj_property name="ElementShortName">TB_seq_y_mem[0:8][1:0]</obj_property>
+      <obj_property name="ObjectShortName">TB_seq_y_mem[0:8][1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/TB_seq_y_bin">
+      <obj_property name="ElementShortName">TB_seq_y_bin[99:0]</obj_property>
+      <obj_property name="ObjectShortName">TB_seq_y_bin[99:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/score_pipe">
+      <obj_property name="ElementShortName">score_pipe[49:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">score_pipe[49:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/Y_pipe">
+      <obj_property name="ElementShortName">Y_pipe[49:0][1:0]</obj_property>
+      <obj_property name="ObjectShortName">Y_pipe[49:0][1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/Y_valid_pipe">
+      <obj_property name="ElementShortName">Y_valid_pipe[49:0]</obj_property>
+      <obj_property name="ObjectShortName">Y_valid_pipe[49:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/score_out">
+      <obj_property name="ElementShortName">score_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">score_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/Y_r">
+      <obj_property name="ElementShortName">Y_r[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Y_r[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/Y_valid">
+      <obj_property name="ElementShortName">Y_valid</obj_property>
+      <obj_property name="ObjectShortName">Y_valid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/stall_counter">
+      <obj_property name="ElementShortName">stall_counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">stall_counter[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y_sren">
+      <obj_property name="ElementShortName">fifo_32_Y_sren</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_Y_sren</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y_dout_valid">
+      <obj_property name="ElementShortName">fifo_32_Y_dout_valid</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_Y_dout_valid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/fifo_32_Y_dout">
+      <obj_property name="ElementShortName">fifo_32_Y_dout[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_Y_dout[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y_srempty">
+      <obj_property name="ElementShortName">fifo_32_Y_srempty</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_Y_srempty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_Y_ffempty">
+      <obj_property name="ElementShortName">fifo_32_Y_ffempty</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_Y_ffempty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/proc_en">
+      <obj_property name="ElementShortName">proc_en[49:0]</obj_property>
+      <obj_property name="ObjectShortName">proc_en[49:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/proc_counter">
+      <obj_property name="ElementShortName">proc_counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">proc_counter[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/proc_stage">
+      <obj_property name="ElementShortName">proc_stage</obj_property>
+      <obj_property name="ObjectShortName">proc_stage</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_score_out_full">
+      <obj_property name="ElementShortName">fifo_32_score_out_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_score_out_full</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/fifo_32_score_out_wren">
+      <obj_property name="ElementShortName">fifo_32_score_out_wren</obj_property>
+      <obj_property name="ObjectShortName">fifo_32_score_out_wren</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/j">
+      <obj_property name="ElementShortName">j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">j[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/empty_flag">
+      <obj_property name="ElementShortName">empty_flag</obj_property>
+      <obj_property name="ObjectShortName">empty_flag</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_final/core_en">
+      <obj_property name="ElementShortName">core_en</obj_property>
+      <obj_property name="ObjectShortName">core_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_final/SEQ_DEPTH">
+      <obj_property name="ElementShortName">SEQ_DEPTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SEQ_DEPTH[31:0]</obj_property>
+   </wvobject>
+</wave_config>
