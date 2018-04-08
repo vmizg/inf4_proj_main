@@ -1,0 +1,3 @@
+/home/vytas/INF4/C/inf4_proj_dev_C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vytas/INF4/C/inf4_proj_dev_C/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vytas/INF4/C/inf4_proj_dev_C/cmake-build-debug/CMakeFiles/inf4_proj_dev_C.dir
