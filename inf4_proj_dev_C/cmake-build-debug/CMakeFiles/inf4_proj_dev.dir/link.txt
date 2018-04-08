@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/inf4_proj_dev.dir/main.c.o  -o inf4_proj_dev -lpthread 
