@@ -5,8 +5,9 @@
 #include <fcntl.h>
 #include <asm/errno.h>
 #include <errno.h>
-
-const int STREAM_BUFFER_LENGTH = 1 * 1024 * 1024;
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <assert.h>
 
 /* Snippet of code borrowed from https://stackoverflow.com/a/3974138 */
 void printBits(size_t const size, void const * const ptr)
@@ -63,14 +64,13 @@ void * process_scores(void *arg) {
     short *matrix = ((threadargs *) arg)->matrix;
     int read_handle = ((threadargs *) arg)->read_handle;
 
-    ssize_t br;
     unsigned long buf[160];
-
     int base_total = 0;
     int stream_total = 0;
     int row = 0;
     int col = 0;
     int end_total = 0;
+    ssize_t br;
 
     while (stream_total != stream_len - 1 || end_total != base_len) {
         br = read(read_handle, &buf, 640);
@@ -88,9 +88,10 @@ void * process_scores(void *arg) {
         }
 
         // Debug
-        // printf("Stream total: %d, end total: %d, returned %d... \n", stream_total, end_total, (int) br);
+        printf("Stream total: %d, end total: %d \n", stream_total, end_total);
 
         while (row < base_total + 1) {
+            printf("At index: [%d][%d] = %d \n", row, col, (int) buf[row]);
             matrix[row*stream_len+col] = (short) buf[row];
             row++;
             col--;
@@ -111,9 +112,7 @@ void * process_scores(void *arg) {
     }
 }
 
-void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *streamseq) {
-    unsigned char basebuf[BASELEN];
-    unsigned char streambuf[STREAM_BUFFER_LENGTH];
+void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
     short *matrix = (short *) malloc(sizeof(short) * BASELEN * STREAMLEN);
 
     // Debug
@@ -123,13 +122,10 @@ void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *stream
     // Open score read interface
     int read_handle;
     read_handle = open("/dev/xillybus_stream_score_out", O_RDONLY);
-
     if (read_handle < 0) {
         perror("Failed to open xillybus_score_stream_out interface");
         exit(1);
     }
-
-    // Debug
     printf("Opened xillybus score read interface \n");
 
     // Open base sequence write interface
@@ -139,8 +135,6 @@ void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *stream
         perror("Failed to open xillybus_stream_dna_x interface");
         return;
     }
-
-    // Debug
     printf("Opened xillybus X write interface \n");
 
     // Open stream sequence write interface
@@ -150,34 +144,47 @@ void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *stream
         perror("Failed to open xillybus_stream_dna_y interface");
         return;
     }
-
-    // Debug
     printf("Opened xillybus Y write interface \n");
 
     /* WRITE SEQUENCE X ****************************************/
-    // File input for base sequence (reversed!)
-    FILE *bseq_in;
-    bseq_in = fopen(baseseq, "rb");
-    if (bseq_in != NULL) {
-        fread(basebuf, (size_t) BASELEN, 1, bseq_in);
-        fclose(bseq_in);
-    } else {
-        perror("Failed to open sequence X file");
-        return;
-    }
-
-    // Debug
-    printf("Successfully read sequence X into buffer! \n");
-
     int i;
     int j;
     ssize_t bw;
     unsigned long partseq;
-    for (i = BASELEN - 1; i >= 0; i = i - 16) {
+
+    int blen_mod = BASELEN % 16;
+    int blen = BASELEN - blen_mod;
+
+    for (i = blen - 1; i >= 0; i = i - 16) {
         partseq = 0 << 1;
         printf("[X] ");
-        for (j = i - 16; j < i; j++) {
-            partseq = extend_bin_sequence(partseq, basebuf[j+1]);
+        for (j = i; j >= i - 15; j--) {
+            partseq = extend_bin_sequence(partseq, baseseq[j]);
+        }
+
+        printf(", in 32-bit: %ld, in binary: ", partseq);
+        printBits(4, &partseq);
+
+        // Write base sequence to FPGA
+        while (1) {
+            bw = write(bseq_out, &partseq, 4);
+
+            if ((bw < 0) && (errno == EINTR))
+                continue;
+
+            if (bw < 0) {
+                perror("write() failed");
+                return;
+            }
+            break;
+        }
+    }
+
+    if (blen_mod > 0) {
+        partseq = 0 << 1;
+        printf("[X] ");
+        for (i = blen_mod - 1; i >= 0; i--) {
+            partseq = extend_bin_sequence(partseq, baseseq[i]);
         }
 
         printf(", in 32-bit: %ld, in binary: ", partseq);
@@ -198,8 +205,6 @@ void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *stream
         }
     }
     close(bseq_out);
-
-    // Debug
     printf("Successfully written sequence X into device! \n");
 
     // Start a read thread here
@@ -211,148 +216,129 @@ void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *stream
     args.read_handle = read_handle;
 
     pthread_create(&read_thread, PTHREAD_CREATE_JOINABLE, process_scores, &args);
-
-    // Debug
     printf("Created thread for reading scores... \n");
 
     /* WRITE SEQUENCE Y ****************************************/
-    // File input for stream sequence (reversed!)
-    FILE *sseq_in;
-    sseq_in = fopen(streamseq, "rb");
-    if (sseq_in == NULL) {
-        perror("Failed to open sequence Y file");
-        return;
-    }
+    ssize_t sw;
 
-    // Debug
-    printf("Opened host Y read interface \n");
+    int slen_mod = STREAMLEN % 16;
+    int slen = STREAMLEN - slen_mod;
 
-    ssize_t fr, sw;
+    for (i = slen - 1; i >= 0; i = i - 16) {
+        partseq = 0 << 1;
+        printf("[Y] ");
+        for (j = i; j >= i - 15; j--) {
+            partseq = extend_bin_sequence(partseq, streamseq[j]);
+        }
 
-    // Integer to indicate if additional parts of sequence need to be processed
-    int extra = STREAMLEN % STREAM_BUFFER_LENGTH;
+        printf(", in 32-bit: %ld, in binary: ", partseq);
+        printBits(4, &partseq);
 
-    while (1) {
-        fr = fread(streambuf, STREAM_BUFFER_LENGTH, 1, sseq_in);
+        // Write stream sequence to FPGA
+        while (1) {
+            sw = write(sseq_out, &partseq, 4);
 
-        if (fr == 0) {
-            // All full parts processed, only additional left
-            // or sequence length is less than the buffer length
+            if ((sw < 0) && (errno == EINTR))
+                continue;
+
+            if (sw < 0) {
+                perror("write() failed");
+                return;
+            }
             break;
-        } else {
-            for (i = (int) fr - 1; i >= 0; i = i - 16) {
-                partseq = 0 << 1;
-                printf("[Y] ");
-                for (j = i - 16; j < i; j++) {
-                    partseq = extend_bin_sequence(partseq, streambuf[j + 1]);
-                }
-
-                printf(", in 32-bit: %ld, in binary: ", partseq);
-                printBits(4, &partseq);
-
-                // Write stream sequence to FPGA
-                while (1) {
-                    sw = write(sseq_out, &partseq, 4);
-
-                    if ((sw < 0) && (errno == EINTR))
-                        continue;
-
-                    if (sw < 0) {
-                        perror("write() failed");
-                        return;
-                    }
-                    break;
-                }
-            }
         }
     }
 
-    if (extra > 0) {
-        // Additional parts have already been read into the buffer
-        int new_total = extra;
-
-        if (STREAMLEN % 16 != 0) {
-            // Extend the buffer values to fit 16 char word to send to FPGA...
-            int fill = 16 - (STREAMLEN % 16);
-            new_total = new_total + fill;
-            for (i = STREAMLEN; i < STREAMLEN + fill; i++) {
-                streambuf[i] = 'A';
-            };
+    if (slen_mod > 0) {
+        partseq = 0 << 1;
+        printf("[Y] ");
+        for (j = slen_mod - 1; j >= 0; j--) {
+            partseq = extend_bin_sequence(partseq, streamseq[j]);
         }
 
-        for (i = new_total - 1; i >= 0; i = i - 16) {
-            partseq = 0 << 1;
-            printf("[Y] ");
-            for (j = i - 16; j < i; j++) {
-                partseq = extend_bin_sequence(partseq, streambuf[j + 1]);
+        printf(", in 32-bit: %ld, in binary: ", partseq);
+        printBits(4, &partseq);
+
+        // Write stream sequence to FPGA
+        while (1) {
+            sw = write(sseq_out, &partseq, 4);
+
+            if ((sw < 0) && (errno == EINTR))
+                continue;
+
+            if (sw < 0) {
+                perror("write() failed");
+                return;
             }
-
-            printf(", in 32-bit: %ld, in binary: ", partseq);
-            printBits(4, &partseq);
-
-            // Write stream sequence to FPGA
-            while (1) {
-                sw = write(sseq_out, &partseq, 4);
-
-                if ((sw < 0) && (errno == EINTR))
-                    continue;
-
-                if (sw < 0) {
-                    perror("write() failed");
-                    return;
-                }
-                break;
-            }
+            break;
         }
     }
-
-    fclose(sseq_in);
     close(sseq_out);
-
-    // Debug
-    printf("Successfully written sequence Y into device! Waiting for read... \n");
+    printf("Successfully written sequence Y into device! Waiting for read... \n \n");
 
     pthread_join(read_thread, NULL);
     close(read_handle);
 
     // Debug
-    printf("Read thread finished. Results: \n \n");
+    printf("Read thread finished. Results: \n");
 
-    int r, c;
-    for (r = 0; r < BASELEN; r++) {
-        for(c = 0; c < STREAMLEN; c++) {
-            printf("%d | ", matrix[r*STREAMLEN+c]);
+    int k;
+    printf("\n  | ");
+    for (k = 0; k < STREAMLEN; ++k) {
+        printf("%c | ", streamseq[k]);
+    }
+    printf("\n");
+
+    for (i = 0; i < BASELEN; i++) {
+        printf("%c | ", baseseq[i]);
+        for (j = 0; j < STREAMLEN; j++) {
+            printf("%d | ", matrix[(i*STREAMLEN)+j]);
         }
         printf("\n");
     }
 }
 
 int main(int argc, char *argv[]) {
-    int BASELEN;
-    int STREAMLEN;
-
     char *baseseq;
     char *streamseq;
 
-    if (argc == 5) {
-        BASELEN = (int) strtol(argv[1], NULL, 10);
-        baseseq = argv[2];
-        STREAMLEN = (int) strtol(argv[3], NULL, 10);
-        streamseq = argv[4];
-
-        if (STREAMLEN > 1200000) {
-            printf("Stream sequence too long to process, max 1,200,000 bases");
-            exit(1);
-        }
+    if (argc == 3) {
+        baseseq = argv[1];
+        streamseq = argv[2];
     } else {
         printf("Wrong arguments, aborting");
         exit(1);
     }
 
-    // Debug
-    printf("Arguments passed: %d, %d \n", BASELEN, STREAMLEN);
+    struct stat st;
+    stat(baseseq, &st);
+    int BASELEN = (int) st.st_size - 1;
+    stat(streamseq, &st);
+    int STREAMLEN = (int) st.st_size - 1;
 
-    process(BASELEN, STREAMLEN, baseseq, streamseq);
+    if (STREAMLEN > 1200000) {
+        printf("Stream sequence too long to process, max 1,200,000 bases");
+        exit(1);
+    }
+
+    printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
+
+    int fd_x = open(baseseq, O_RDONLY, 0);
+    int fd_y = open(streamseq, O_RDONLY, 0);
+    assert (fd_x != -1 && fd_y != -1);
+
+    char *seq_X = (char *) mmap(NULL, BASELEN * sizeof(char), PROT_READ, MAP_PRIVATE | MAP_POPULATE, fd_x, 0);
+    char *seq_Y = (char *) mmap(NULL, STREAMLEN * sizeof(char), PROT_READ, MAP_PRIVATE | MAP_POPULATE, fd_y, 0);
+    assert (seq_X != MAP_FAILED && seq_Y != MAP_FAILED);
+
+    process(BASELEN, STREAMLEN, seq_X, seq_Y);
+
+    int fin_x = munmap(seq_X, BASELEN * sizeof(char));
+    int fin_y = munmap(seq_Y, STREAMLEN * sizeof(char));
+    assert (fin_x == 0 && fin_y == 0);
+
+    close(fd_x);
+    close(fd_y);
 
     return 0;
 }

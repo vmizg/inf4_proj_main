@@ -166,18 +166,18 @@ void StdProc::process() {
 }
 
 void StdProc::print() {
-    cout << endl << endl << "  | ";
+    printf("\n  | ");
     for (int k = 0; k < Y_len; ++k) {
-        cout << Y[k] << " | ";
+        printf("%c | ", Y[k]);
     }
-    cout << endl;
+    printf("\n");
 
     for (int i = 0; i < X_len; i++) {
-        cout << X[i] << " | ";
+        printf("%c | ", X[i]);
         for (int j = 0; j < Y_len; j++) {
-            cout << score_matrix[(i*Y_len)+j] << " | ";
+            printf("%d | ", score_matrix[(i*Y_len)+j]);
         }
-        cout << endl;
+        printf("\n");
     }
 }
 
@@ -203,6 +203,8 @@ int main(int argc, char *argv[]) {
         printf("Stream sequence too long to process, max 1,200,000 bases");
         exit(1);
     }
+
+    printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
 
     int fd_x = open(baseseq, O_RDONLY, 0);
     int fd_y = open(streamseq, O_RDONLY, 0);
