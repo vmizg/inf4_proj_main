@@ -28,6 +28,7 @@ typedef struct threadargs {
     long base_len;
     long stream_len;
     short *matrix;
+    int read_handle;
 } threadargs;
 
 unsigned long extend_bin_sequence(unsigned long sequence, char new_base) {
@@ -60,23 +61,11 @@ void * process_scores(void *arg) {
     long base_len = ((threadargs *) arg)->base_len;
     long stream_len = ((threadargs *) arg)->stream_len;
     short *matrix = ((threadargs *) arg)->matrix;
+    int read_handle = ((threadargs *) arg)->read_handle;
 
     ssize_t br;
     unsigned long buf[160];
 
-    // Open score read interface
-    int read_handle;
-    read_handle = open("/dev/xillybus_stream_score_out", O_RDONLY);
-
-    if (read_handle < 0) {
-        perror("Failed to open xillybus_score_stream_out interface");
-        exit(1);
-    }
-
-    // Debug
-    printf("Opened xillybus score read interface \n");
-
-    int i = 0;
     int base_total = 0;
     int stream_total = 0;
     int row = 0;
@@ -120,34 +109,9 @@ void * process_scores(void *arg) {
 
         col = stream_total;
     }
-    close(read_handle);
 }
 
-int main(int argc, char *argv[]) {
-    int BASELEN;
-    int STREAMLEN;
-
-    char *baseseq;
-    char *streamseq;
-
-    if (argc == 5) {
-        BASELEN = (int) strtol(argv[1], NULL, 10);
-        baseseq = argv[2];
-        STREAMLEN = (int) strtol(argv[3], NULL, 10);
-        streamseq = argv[4];
-
-        if (STREAMLEN > 1200000) {
-            printf("Stream sequence too long to process, max 1,200,000 bases");
-            exit(1);
-        }
-    } else {
-        printf("Wrong arguments, aborting");
-        exit(1);
-    }
-
-    // Debug
-    printf("Arguments passed: %d, %d \n", BASELEN, STREAMLEN);
-
+void process(int BASELEN, int STREAMLEN, const char *baseseq, const char *streamseq) {
     unsigned char basebuf[BASELEN];
     unsigned char streambuf[STREAM_BUFFER_LENGTH];
     short *matrix = (short *) malloc(sizeof(short) * BASELEN * STREAMLEN);
@@ -155,28 +119,25 @@ int main(int argc, char *argv[]) {
     // Debug
     printf("Allocated %d space for score matrix \n", (int) sizeof(short) * BASELEN * STREAMLEN);
 
-    /***********************************************************/
     /* OPEN INTERFACES *****************************************/
-    /***********************************************************/
+    // Open score read interface
+    int read_handle;
+    read_handle = open("/dev/xillybus_stream_score_out", O_RDONLY);
 
-    // Start a read thread here
-    pthread_t read_thread;
-    threadargs args;
-    args.base_len = BASELEN;
-    args.stream_len = STREAMLEN;
-    args.matrix = matrix;
-
-    pthread_create(&read_thread, PTHREAD_CREATE_JOINABLE, process_scores, &args);
+    if (read_handle < 0) {
+        perror("Failed to open xillybus_score_stream_out interface");
+        exit(1);
+    }
 
     // Debug
-    printf("Created thread for reading scores... \n");
+    printf("Opened xillybus score read interface \n");
 
     // Open base sequence write interface
     int bseq_out;
     bseq_out = open("/dev/xillybus_stream_dna_x", O_WRONLY);
     if (bseq_out < 0) {
         perror("Failed to open xillybus_stream_dna_x interface");
-        exit(1);
+        return;
     }
 
     // Debug
@@ -187,16 +148,13 @@ int main(int argc, char *argv[]) {
     sseq_out = open("/dev/xillybus_stream_dna_y", O_WRONLY);
     if (sseq_out < 0) {
         perror("Failed to open xillybus_stream_dna_y interface");
-        exit(1);
+        return;
     }
 
     // Debug
     printf("Opened xillybus Y write interface \n");
 
-    /***********************************************************/
     /* WRITE SEQUENCE X ****************************************/
-    /***********************************************************/
-
     // File input for base sequence (reversed!)
     FILE *bseq_in;
     bseq_in = fopen(baseseq, "rb");
@@ -205,7 +163,7 @@ int main(int argc, char *argv[]) {
         fclose(bseq_in);
     } else {
         perror("Failed to open sequence X file");
-        exit(1);
+        return;
     }
 
     // Debug
@@ -234,7 +192,7 @@ int main(int argc, char *argv[]) {
 
             if (bw < 0) {
                 perror("write() failed");
-                exit(1);
+                return;
             }
             break;
         }
@@ -244,18 +202,26 @@ int main(int argc, char *argv[]) {
     // Debug
     printf("Successfully written sequence X into device! \n");
 
-    /***********************************************************/
+    // Start a read thread here
+    pthread_t read_thread;
+    threadargs args;
+    args.base_len = BASELEN;
+    args.stream_len = STREAMLEN;
+    args.matrix = matrix;
+    args.read_handle = read_handle;
 
-    /***********************************************************/
+    pthread_create(&read_thread, PTHREAD_CREATE_JOINABLE, process_scores, &args);
+
+    // Debug
+    printf("Created thread for reading scores... \n");
+
     /* WRITE SEQUENCE Y ****************************************/
-    /***********************************************************/
-
     // File input for stream sequence (reversed!)
     FILE *sseq_in;
     sseq_in = fopen(streamseq, "rb");
     if (sseq_in == NULL) {
         perror("Failed to open sequence Y file");
-        exit(1);
+        return;
     }
 
     // Debug
@@ -293,7 +259,7 @@ int main(int argc, char *argv[]) {
 
                     if (sw < 0) {
                         perror("write() failed");
-                        exit(1);
+                        return;
                     }
                     break;
                 }
@@ -333,7 +299,7 @@ int main(int argc, char *argv[]) {
 
                 if (sw < 0) {
                     perror("write() failed");
-                    exit(1);
+                    return;
                 }
                 break;
             }
@@ -347,7 +313,7 @@ int main(int argc, char *argv[]) {
     printf("Successfully written sequence Y into device! Waiting for read... \n");
 
     pthread_join(read_thread, NULL);
-
+    close(read_handle);
 
     // Debug
     printf("Read thread finished. Results: \n \n");
@@ -359,6 +325,34 @@ int main(int argc, char *argv[]) {
         }
         printf("\n");
     }
+}
+
+int main(int argc, char *argv[]) {
+    int BASELEN;
+    int STREAMLEN;
+
+    char *baseseq;
+    char *streamseq;
+
+    if (argc == 5) {
+        BASELEN = (int) strtol(argv[1], NULL, 10);
+        baseseq = argv[2];
+        STREAMLEN = (int) strtol(argv[3], NULL, 10);
+        streamseq = argv[4];
+
+        if (STREAMLEN > 1200000) {
+            printf("Stream sequence too long to process, max 1,200,000 bases");
+            exit(1);
+        }
+    } else {
+        printf("Wrong arguments, aborting");
+        exit(1);
+    }
+
+    // Debug
+    printf("Arguments passed: %d, %d \n", BASELEN, STREAMLEN);
+
+    process(BASELEN, STREAMLEN, baseseq, streamseq);
 
     return 0;
 }
