@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vytas/INF4/inf4_proj_main/inf4_proj_dev_C/main.c
+stdio.h
+-
+stdlib.h
+-
+pthread.h
+-
+unistd.h
+-
+fcntl.h
+-
+asm/errno.h
+-
+errno.h
+-
+

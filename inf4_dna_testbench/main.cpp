@@ -25,8 +25,8 @@ int StdElement::align(char Y, int top_in) {
     this->top = top_in;
 
     // Debug
-    // cout << "X: " << this->X_in << ", Y: " << Y << " - ";
-    // cout << "Left=" << this->left << ", Diag=" << this->diag << ", Top=" << this->top;
+    // printf("X: %c, Y: %c - ", this->X_in, Y);
+    // printf("Left=%d, Diag=%d, Top=%d", this->left, this->diag, this->top);
 
     // F(i-1,j-1) + S(xi,yi) = diagonal value + match / mismatch
     int ms = (this->X_in == Y) ?
@@ -49,7 +49,7 @@ int StdElement::align(char Y, int top_in) {
     this->left = this->score;
 
     // Debug
-    // cout << ", score=" << this->score << endl; // DEBUG
+    // printf(", score=%d \n", this->score);
 
     // Return score to write to score matrix
     return this->score;
@@ -95,12 +95,13 @@ StdProc::StdProc(char *X, int X_len, char *Y, int Y_len) {
 
 void StdProc::process() {
     int score_buffer[X_len+1];
-    Y_shift_reg.push_back(Y_root->base);
-    int shift_reg_size = 1;
+    int X_window = 1;
+    int top_in = 0;
 
     for (int i = 0; i < X_len+1; i++) {
         score_buffer[i] = 0;
     }
+    Y_shift_reg.push_back(Y_root->base);
 
     // TIME     0     1  0     2  1  0     3  2  1  0
     // PE 0     []    [] []    [] [] []    [] [] [] []
@@ -110,34 +111,34 @@ void StdProc::process() {
 
     // Starting to operate first PEs
     // 1 PE, 2 PEs in parallel, 3 PEs in parallel ... < X_len PEs in parallel
-    while (shift_reg_size < this->X_len) {
+    while (X_window < this->X_len) {
         // Debug
-        // cout << endl << "Initial run No. " << shift_reg_size << endl;
+        // printf("Initial run No. %d \n", X_window);
 
-        for (int j = 0; j < shift_reg_size; j++) {
-            int top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
-
-            score_buffer[j] = pe_array[j].align(Y_shift_reg[shift_reg_size-j-1], top_in);
-            score_matrix[(j*Y_len)+(shift_reg_size-j-1)] = score_buffer[j];
+        for (int j = 0; j < X_window; j++) {
+            top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
+            score_buffer[j] = pe_array[j].align(Y_shift_reg[X_window-j-1], top_in);
+            score_matrix[(j*Y_len)+(X_window-j-1)] = score_buffer[j];
         }
 
         Y_root = Y_root->next;
         Y_shift_reg.push_back(Y_root->base);
-        shift_reg_size = int(Y_shift_reg.size());
+        X_window = int(Y_shift_reg.size());
     }
 
     // At this stage, all PEs are running
     // length(PE_array) == X_len
-    for (int i = 0; i < Y_len - shift_reg_size + 1; i++) {
+    int start_col = 0;
+    while (start_col < Y_len - X_window) {
         // Debug
-        // cout << endl << "Full run No. " << i << endl;
+        // printf("Full run No. %d \n", start_col);
 
-        for (int j = 0; j < shift_reg_size; j++) {
-            int top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
-
-            score_buffer[j] = pe_array[j].align(Y_shift_reg[shift_reg_size-j-1], top_in);
-            score_matrix[(j*Y_len)+(shift_reg_size+i-j-1)] = score_buffer[j];
+        for (int j = 0; j < X_window; j++) {
+            top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
+            score_buffer[j] = pe_array[j].align(Y_shift_reg[X_window-j-1], top_in);
+            score_matrix[(j*Y_len)+(X_window+start_col-j-1)] = score_buffer[j];
         }
+        start_col++;
 
         Y_root = Y_root->next;
         Y_shift_reg.push_back(Y_root->base);
@@ -146,17 +147,17 @@ void StdProc::process() {
 
     // At this stage, remaining scores are calculated
     // X_len PEs operate, X_len-1 PEs operate, ... 1 PE operates, halt.
-    int start_row = 1;
-    for (int i = 1; i < shift_reg_size; i++) {
+    int start_row = 0;
+    while (start_col < Y_len) {
         // Debug
-        // cout << endl << "Finishing run No. " << i << endl;
+        // printf("Finishing run No. %d \n", start_row);
 
-        for (int j = start_row; j < shift_reg_size; j++) {
-            int top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
-
-            score_buffer[j] = pe_array[j].align(Y_shift_reg[shift_reg_size-j-1], top_in);
-            score_matrix[(j*Y_len)+(shift_reg_size+i-j-1)] = score_buffer[j];
+        for (int j = start_row; j < X_window; j++) {
+            top_in = j == 0 ? 0 : pe_array[j-1].getBottom();
+            score_buffer[j] = pe_array[j].align(Y_shift_reg[X_window-j-1], top_in);
+            score_matrix[(j*Y_len)+(X_window+start_col-j-1)] = score_buffer[j];
         }
+        start_col++;
         start_row++;
 
         Y_root = Y_root->next;
