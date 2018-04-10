@@ -155,7 +155,7 @@ module sw_proc(
          .rst(final_flag), // Reset after sequence Y has passed through fully
          .sr_en(fifo_32_Y_sren),
          .data_in(user_w_stream_dna_y_data),
-         .data_in_valid(user_w_stream_dna_y_wren),
+         .data_in_wren(user_w_stream_dna_y_wren),
          .data_out(fifo_32_Y_dout),
          .data_out_valid(fifo_32_Y_dout_valid),
          .fifo_full(user_w_stream_dna_y_full),

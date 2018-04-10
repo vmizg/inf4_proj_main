@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1'
+HD_PWD='/home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

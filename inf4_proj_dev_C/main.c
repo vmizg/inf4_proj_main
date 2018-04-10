@@ -397,15 +397,9 @@ int main(int argc, char *argv[]) {
 
     struct stat st;
     stat(baseseq, &st);
-    int BASELEN = (int) st.st_size - 1;
+    int basefile_len = (int) st.st_size;
     stat(streamseq, &st);
-    int STREAMLEN = (int) st.st_size - 1;
-
-    if (STREAMLEN > 1200000) {
-        printf("Stream sequence too long to process, max 1,200,000 bases");
-        exit(1);
-    }
-    printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
+    int streamfile_len = (int) st.st_size;
 
     FILE * fd_x;
     char * line = NULL;
@@ -418,13 +412,14 @@ int main(int argc, char *argv[]) {
 
     int i;
     int total = 0;
-    char *seq_X = (char *) malloc(sizeof(char) * BASELEN);
-
+    int BASELEN = 0;
+    char *seq_X = (char *) malloc(sizeof(char) * basefile_len);
     while ((read = getline(&line, &len, fd_x)) != -1) {
         for (i = 0; i < read; i++) {
             if (line[i] == '\n')
                 break;
             seq_X[total+i] = line[i];
+            BASELEN = BASELEN + 1;
         }
         total = total + (int) read;
     }
@@ -439,16 +434,24 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
 
     total = 0;
-    char *seq_Y = (char *) malloc(sizeof(char) * STREAMLEN);
+    int STREAMLEN = 0;
+    char *seq_Y = (char *) malloc(sizeof(char) * streamfile_len);
     while ((read = getline(&line, &len, fd_y)) != -1) {
         for (i = 0; i < read; i++) {
             if (line[i] == '\n')
                 break;
             seq_Y[total+i] = line[i];
+            STREAMLEN = STREAMLEN + 1;
         }
         total = total + (int) read;
     }
     fclose(fd_y);
+
+    if (STREAMLEN > 1200000) {
+        printf("Stream sequence too long to process, max 1,200,000 bases");
+        exit(1);
+    }
+    printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
 
     process(BASELEN, STREAMLEN, seq_X, seq_Y);
 

@@ -21,4 +21,10 @@ asm/errno.h
 -
 errno.h
 -
+sys/stat.h
+-
+sys/mman.h
+-
+assert.h
+-
 

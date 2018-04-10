@@ -4,7 +4,7 @@
 -- Date        : Sun Feb 18 21:43:30 2018
 -- Host        : 640-G1 running 64-bit Ubuntu 17.10
 -- Command     : write_vhdl -force -mode funcsim
---               /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.vhdl
+--               /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.vhdl
 -- Design      : fifo_32x512
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

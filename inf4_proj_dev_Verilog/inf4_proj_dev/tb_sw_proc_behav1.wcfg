@@ -11,11 +11,83 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="79861666666fs"></ZoomStartTime>
-      <ZoomEndTime time="89271666667fs"></ZoomEndTime>
-      <Cursor1Time time="83695000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="12700000001fs"></ZoomEndTime>
+      <Cursor1Time time="1912600000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="70" />
+   <WVObjectSize size="89" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/sr_en">
+      <obj_property name="ElementShortName">sr_en</obj_property>
+      <obj_property name="ObjectShortName">sr_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/data_in">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/data_out">
+      <obj_property name="ElementShortName">data_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/data_out_valid">
+      <obj_property name="ElementShortName">data_out_valid</obj_property>
+      <obj_property name="ObjectShortName">data_out_valid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/fifo_full">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/sr_empty">
+      <obj_property name="ElementShortName">sr_empty</obj_property>
+      <obj_property name="ObjectShortName">sr_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/fifo_empty">
+      <obj_property name="ElementShortName">fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">fifo_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/fifo_dout">
+      <obj_property name="ElementShortName">fifo_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/shift_reg">
+      <obj_property name="ElementShortName">shift_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/shift_counter">
+      <obj_property name="ElementShortName">shift_counter[4:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_counter[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/read_stage">
+      <obj_property name="ElementShortName">read_stage[1:0]</obj_property>
+      <obj_property name="ObjectShortName">read_stage[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/data_in_wren">
+      <obj_property name="ElementShortName">data_in_wren</obj_property>
+      <obj_property name="ObjectShortName">data_in_wren</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/data_in_rden">
+      <obj_property name="ElementShortName">data_in_rden</obj_property>
+      <obj_property name="ObjectShortName">data_in_rden</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/data_ready">
+      <obj_property name="ElementShortName">data_ready</obj_property>
+      <obj_property name="ObjectShortName">data_ready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/fifo_32_Y/need_data">
+      <obj_property name="ElementShortName">need_data</obj_property>
+      <obj_property name="ObjectShortName">need_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider301" type="divider">
+      <obj_property name="label">shifter end</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
    <wvobject db_ref_id="1" type="logic" fp_name="/tb_sw_proc/u_sw_proc/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -71,7 +143,688 @@
    <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe">
       <obj_property name="ElementShortName">score_pipe[159:0][9:0]</obj_property>
       <obj_property name="ObjectShortName">score_pipe[159:0][9:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[159]">
+         <obj_property name="ElementShortName">[159][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[159][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[158]">
+         <obj_property name="ElementShortName">[158][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[158][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[157]">
+         <obj_property name="ElementShortName">[157][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[157][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[156]">
+         <obj_property name="ElementShortName">[156][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[156][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[155]">
+         <obj_property name="ElementShortName">[155][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[155][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[154]">
+         <obj_property name="ElementShortName">[154][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[154][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[153]">
+         <obj_property name="ElementShortName">[153][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[153][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[152]">
+         <obj_property name="ElementShortName">[152][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[152][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[151]">
+         <obj_property name="ElementShortName">[151][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[151][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[150]">
+         <obj_property name="ElementShortName">[150][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[150][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[149]">
+         <obj_property name="ElementShortName">[149][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[149][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[148]">
+         <obj_property name="ElementShortName">[148][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[148][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[147]">
+         <obj_property name="ElementShortName">[147][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[147][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[146]">
+         <obj_property name="ElementShortName">[146][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[146][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[145]">
+         <obj_property name="ElementShortName">[145][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[145][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[144]">
+         <obj_property name="ElementShortName">[144][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[144][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[143]">
+         <obj_property name="ElementShortName">[143][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[143][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[142]">
+         <obj_property name="ElementShortName">[142][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[142][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[141]">
+         <obj_property name="ElementShortName">[141][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[141][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[140]">
+         <obj_property name="ElementShortName">[140][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[140][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[139]">
+         <obj_property name="ElementShortName">[139][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[139][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[138]">
+         <obj_property name="ElementShortName">[138][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[138][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[137]">
+         <obj_property name="ElementShortName">[137][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[137][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[136]">
+         <obj_property name="ElementShortName">[136][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[136][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[135]">
+         <obj_property name="ElementShortName">[135][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[135][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[134]">
+         <obj_property name="ElementShortName">[134][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[134][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[133]">
+         <obj_property name="ElementShortName">[133][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[133][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[132]">
+         <obj_property name="ElementShortName">[132][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[132][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[131]">
+         <obj_property name="ElementShortName">[131][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[131][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[130]">
+         <obj_property name="ElementShortName">[130][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[130][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[129]">
+         <obj_property name="ElementShortName">[129][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[129][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[128]">
+         <obj_property name="ElementShortName">[128][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[128][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[127]">
+         <obj_property name="ElementShortName">[127][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[127][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[126]">
+         <obj_property name="ElementShortName">[126][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[126][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[125]">
+         <obj_property name="ElementShortName">[125][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[125][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[124]">
+         <obj_property name="ElementShortName">[124][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[124][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[123]">
+         <obj_property name="ElementShortName">[123][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[123][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[122]">
+         <obj_property name="ElementShortName">[122][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[122][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[121]">
+         <obj_property name="ElementShortName">[121][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[121][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[120]">
+         <obj_property name="ElementShortName">[120][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[120][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[119]">
+         <obj_property name="ElementShortName">[119][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[119][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[118]">
+         <obj_property name="ElementShortName">[118][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[118][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[117]">
+         <obj_property name="ElementShortName">[117][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[117][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[116]">
+         <obj_property name="ElementShortName">[116][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[116][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[115]">
+         <obj_property name="ElementShortName">[115][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[115][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[114]">
+         <obj_property name="ElementShortName">[114][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[114][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[113]">
+         <obj_property name="ElementShortName">[113][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[113][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[112]">
+         <obj_property name="ElementShortName">[112][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[112][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[111]">
+         <obj_property name="ElementShortName">[111][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[111][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[110]">
+         <obj_property name="ElementShortName">[110][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[110][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[109]">
+         <obj_property name="ElementShortName">[109][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[109][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[108]">
+         <obj_property name="ElementShortName">[108][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[108][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[107]">
+         <obj_property name="ElementShortName">[107][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[107][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[106]">
+         <obj_property name="ElementShortName">[106][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[106][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[105]">
+         <obj_property name="ElementShortName">[105][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[105][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[104]">
+         <obj_property name="ElementShortName">[104][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[104][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[103]">
+         <obj_property name="ElementShortName">[103][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[103][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[102]">
+         <obj_property name="ElementShortName">[102][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[102][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[101]">
+         <obj_property name="ElementShortName">[101][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[101][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[100]">
+         <obj_property name="ElementShortName">[100][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[100][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[99]">
+         <obj_property name="ElementShortName">[99][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[99][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[98]">
+         <obj_property name="ElementShortName">[98][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[98][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[97]">
+         <obj_property name="ElementShortName">[97][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[97][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[96]">
+         <obj_property name="ElementShortName">[96][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[96][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[95]">
+         <obj_property name="ElementShortName">[95][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[95][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[94]">
+         <obj_property name="ElementShortName">[94][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[94][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[93]">
+         <obj_property name="ElementShortName">[93][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[93][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[92]">
+         <obj_property name="ElementShortName">[92][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[92][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[91]">
+         <obj_property name="ElementShortName">[91][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[91][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[90]">
+         <obj_property name="ElementShortName">[90][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[90][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[89]">
+         <obj_property name="ElementShortName">[89][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[89][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[88]">
+         <obj_property name="ElementShortName">[88][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[88][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[87]">
+         <obj_property name="ElementShortName">[87][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[87][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[86]">
+         <obj_property name="ElementShortName">[86][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[86][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[85]">
+         <obj_property name="ElementShortName">[85][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[85][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[84]">
+         <obj_property name="ElementShortName">[84][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[84][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[83]">
+         <obj_property name="ElementShortName">[83][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[83][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[82]">
+         <obj_property name="ElementShortName">[82][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[82][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[81]">
+         <obj_property name="ElementShortName">[81][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[81][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[80]">
+         <obj_property name="ElementShortName">[80][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[80][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[79]">
+         <obj_property name="ElementShortName">[79][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[79][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[78]">
+         <obj_property name="ElementShortName">[78][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[78][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[77]">
+         <obj_property name="ElementShortName">[77][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[77][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[76]">
+         <obj_property name="ElementShortName">[76][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[76][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[75]">
+         <obj_property name="ElementShortName">[75][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[75][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[74]">
+         <obj_property name="ElementShortName">[74][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[74][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[73]">
+         <obj_property name="ElementShortName">[73][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[73][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[72]">
+         <obj_property name="ElementShortName">[72][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[72][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[71]">
+         <obj_property name="ElementShortName">[71][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[71][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[70]">
+         <obj_property name="ElementShortName">[70][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[70][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[69]">
+         <obj_property name="ElementShortName">[69][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[69][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[68]">
+         <obj_property name="ElementShortName">[68][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[68][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[67]">
+         <obj_property name="ElementShortName">[67][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[67][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[66]">
+         <obj_property name="ElementShortName">[66][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[66][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[65]">
+         <obj_property name="ElementShortName">[65][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[65][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[64]">
+         <obj_property name="ElementShortName">[64][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[64][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[63]">
+         <obj_property name="ElementShortName">[63][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[63][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[62]">
+         <obj_property name="ElementShortName">[62][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[62][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[61]">
+         <obj_property name="ElementShortName">[61][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[61][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[60]">
+         <obj_property name="ElementShortName">[60][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[60][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[59]">
+         <obj_property name="ElementShortName">[59][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[59][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[58]">
+         <obj_property name="ElementShortName">[58][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[58][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[57]">
+         <obj_property name="ElementShortName">[57][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[57][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[56]">
+         <obj_property name="ElementShortName">[56][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[56][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[55]">
+         <obj_property name="ElementShortName">[55][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[55][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[54]">
+         <obj_property name="ElementShortName">[54][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[54][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[53]">
+         <obj_property name="ElementShortName">[53][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[53][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[52]">
+         <obj_property name="ElementShortName">[52][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[52][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[51]">
+         <obj_property name="ElementShortName">[51][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[51][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[50]">
+         <obj_property name="ElementShortName">[50][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[50][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[49]">
+         <obj_property name="ElementShortName">[49][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[49][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[48]">
+         <obj_property name="ElementShortName">[48][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[48][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[47]">
+         <obj_property name="ElementShortName">[47][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[47][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[46]">
+         <obj_property name="ElementShortName">[46][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[46][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[45]">
+         <obj_property name="ElementShortName">[45][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[45][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[44]">
+         <obj_property name="ElementShortName">[44][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[44][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[43]">
+         <obj_property name="ElementShortName">[43][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[43][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[42]">
+         <obj_property name="ElementShortName">[42][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[42][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[41]">
+         <obj_property name="ElementShortName">[41][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[41][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[40]">
+         <obj_property name="ElementShortName">[40][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[40][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[39]">
+         <obj_property name="ElementShortName">[39][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[39][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[38]">
+         <obj_property name="ElementShortName">[38][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[38][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[37]">
+         <obj_property name="ElementShortName">[37][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[37][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[36]">
+         <obj_property name="ElementShortName">[36][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[36][9:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[35]">
+         <obj_property name="ElementShortName">[35][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[35][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[34]">
+         <obj_property name="ElementShortName">[34][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[34][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[33]">
+         <obj_property name="ElementShortName">[33][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[33][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[32]">
+         <obj_property name="ElementShortName">[32][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[32][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[31]">
+         <obj_property name="ElementShortName">[31][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[31][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[30]">
+         <obj_property name="ElementShortName">[30][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[30][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[29]">
+         <obj_property name="ElementShortName">[29][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[29][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[28]">
+         <obj_property name="ElementShortName">[28][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[28][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[27]">
+         <obj_property name="ElementShortName">[27][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[27][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[26]">
+         <obj_property name="ElementShortName">[26][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[26][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[25]">
+         <obj_property name="ElementShortName">[25][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[25][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[24]">
+         <obj_property name="ElementShortName">[24][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[24][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[23]">
+         <obj_property name="ElementShortName">[23][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[23][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[22]">
+         <obj_property name="ElementShortName">[22][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[22][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[21]">
+         <obj_property name="ElementShortName">[21][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[21][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[20]">
+         <obj_property name="ElementShortName">[20][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[20][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[19]">
+         <obj_property name="ElementShortName">[19][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[19][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[18]">
+         <obj_property name="ElementShortName">[18][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[18][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[17]">
+         <obj_property name="ElementShortName">[17][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[17][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[16]">
+         <obj_property name="ElementShortName">[16][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[16][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[15]">
+         <obj_property name="ElementShortName">[15][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[15][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[14]">
+         <obj_property name="ElementShortName">[14][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[14][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[13]">
+         <obj_property name="ElementShortName">[13][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[13][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[12]">
+         <obj_property name="ElementShortName">[12][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[12][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[11]">
+         <obj_property name="ElementShortName">[11][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[11][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[10]">
+         <obj_property name="ElementShortName">[10][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[10][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[9]">
+         <obj_property name="ElementShortName">[9][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[9][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[8]">
+         <obj_property name="ElementShortName">[8][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[8][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[7]">
+         <obj_property name="ElementShortName">[7][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[7][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[6]">
+         <obj_property name="ElementShortName">[6][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[6][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[5]">
+         <obj_property name="ElementShortName">[5][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[5][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[4]">
+         <obj_property name="ElementShortName">[4][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[4][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[3]">
+         <obj_property name="ElementShortName">[3][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[3][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[2]">
+         <obj_property name="ElementShortName">[2][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[2][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[1]">
+         <obj_property name="ElementShortName">[1][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[1][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/score_pipe[0]">
+         <obj_property name="ElementShortName">[0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">score_pipe[0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/seq_y">
+      <obj_property name="ElementShortName">seq_y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">seq_y[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/tb_sw_proc/u_sw_proc/Y_valid_pipe">
       <obj_property name="ElementShortName">Y_valid_pipe[159:0]</obj_property>

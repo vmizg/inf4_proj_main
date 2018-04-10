@@ -4,7 +4,7 @@
 // Date        : Sun Feb 18 21:40:16 2018
 // Host        : 640-G1 running 64-bit Ubuntu 17.10
 // Command     : write_verilog -force -mode funcsim
-//               /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_sim_netlist.v
+//               /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_sim_netlist.v
 // Design      : vga_fifo
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -24,8 +24,8 @@ module fifo_shift_2x32 (
 	input clk,
 	input rst,
 	input sr_en,
-    input [31:0] data_in, // user_w_write_32_data
-	input data_in_valid,
+    input [31:0] data_in, // user_w_stream_dna_y_data
+	input data_in_wren,   // user_w_stream_dna_y_wren
 	output reg [1:0] data_out,
 	output reg data_out_valid,
     output fifo_full,
@@ -38,8 +38,7 @@ reg  [31:0] shift_reg;
 reg  [4:0] shift_counter;
 reg  [1:0] read_stage;
 
-reg data_in_wren, data_in_rden;
-
+reg data_in_rden;
 reg data_ready;
 reg need_data;
 
@@ -54,24 +53,17 @@ fifo_32x512 fifo_32(
     .empty(fifo_empty)
 );
 
-// FIFO data preload
+// Shift register data preload
 always @(posedge clk)
 begin
     if (rst)
         begin
-        data_in_wren <= 1'b0;
         data_in_rden <= 1'b0;
         data_ready   <= 1'b0;
         read_stage   <= 2'd0;
         end
     else
         begin
-        // Always try to load values into FIFO
-        if (!fifo_full && data_in_valid)
-            data_in_wren <= 1'b1;
-        else
-            data_in_wren <= 1'b0;
-            
         if (sr_en && need_data && !fifo_empty && read_stage == 2'd0)
             begin
             data_in_rden <= 1'b1;

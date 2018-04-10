@@ -4,7 +4,7 @@
 -- Date        : Sun Feb 18 21:40:16 2018
 -- Host        : 640-G1 running 64-bit Ubuntu 17.10
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_stub.vhdl
+--               /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_stub.vhdl
 -- Design      : vga_fifo
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1
