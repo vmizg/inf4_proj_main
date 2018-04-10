@@ -29,7 +29,7 @@ int StdElement::align(char Y, int top_in) {
     // printf("Left=%d, Diag=%d, Top=%d", this->left, this->diag, this->top);
 
     // F(i-1,j-1) + S(xi,yi) = diagonal value + match / mismatch
-    int ms = (this->X_in == Y) ?
+    int ms = (tolower(this->X_in) == tolower(Y)) ?
                  this->diag + this->match :
                  this->diag + this->mismatch;
 
@@ -206,24 +206,57 @@ int main(int argc, char *argv[]) {
 
     printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
 
-    int fd_x = open(baseseq, O_RDONLY, 0);
-    int fd_y = open(streamseq, O_RDONLY, 0);
-    assert (fd_x != -1 && fd_y != -1);
+    clock_t time_start = clock();
 
-    auto *seq_X = (char *) mmap(nullptr, BASELEN * sizeof(char), PROT_READ, MAP_PRIVATE | MAP_POPULATE, fd_x, 0);
-    auto *seq_Y = (char *) mmap(nullptr, STREAMLEN * sizeof(char), PROT_READ, MAP_PRIVATE | MAP_POPULATE, fd_y, 0);
-    assert(seq_X != MAP_FAILED && seq_Y != MAP_FAILED);
+    FILE * fd_x;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
+    fd_x = fopen(baseseq, "r");
+    if (fd_x == NULL)
+        exit(EXIT_FAILURE);
+
+    int i;
+    int total = 0;
+    char *seq_X = (char *) malloc(sizeof(char) * BASELEN);
+
+    while ((read = getline(&line, &len, fd_x)) != -1) {
+        for (i = 0; i < read; i++) {
+            seq_X[total+i] = line[i];
+        }
+        total = total + (int) read;
+    }
+    BASELEN = total;
+    fclose(fd_x);
+
+    FILE * fd_y;
+    line = NULL;
+    len = 0;
+
+    fd_y = fopen(streamseq, "r");
+    if (fd_y == NULL)
+        exit(EXIT_FAILURE);
+
+    total = 0;
+    char *seq_Y = (char *) malloc(sizeof(char) * STREAMLEN);
+    while ((read = getline(&line, &len, fd_y)) != -1) {
+        for (i = 0; i < read; i++) {
+            seq_Y[total+i] = line[i];
+        }
+        total = total + (int) read;
+    }
+    STREAMLEN = total;
+    fclose(fd_y);
 
     StdProc p = StdProc(seq_X, BASELEN, seq_Y, STREAMLEN);
     p.process();
     p.print();
 
-    int fin_x = munmap(seq_X, BASELEN * sizeof(char));
-    int fin_y = munmap(seq_Y, STREAMLEN * sizeof(char));
-    assert (fin_x == 0 && fin_y == 0);
+    clock_t time_end = clock();
+    double time_spent = (double) (time_end - time_start) / CLOCKS_PER_SEC;
 
-    close(fd_x);
-    close(fd_y);
+    printf("Time elapsed: %lf s \n", time_spent);
 
     return 0;
 }
