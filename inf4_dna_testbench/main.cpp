@@ -195,18 +195,9 @@ int main(int argc, char *argv[]) {
 
     struct stat st;
     stat(baseseq, &st);
-    auto BASELEN = (int) st.st_size;
+    int basefile_len = (int) st.st_size;
     stat(streamseq, &st);
-    auto STREAMLEN = (int) st.st_size;
-
-    if (STREAMLEN > 1200000) {
-        printf("Stream sequence too long to process, max 1,200,000 bases");
-        exit(1);
-    }
-
-    printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
-
-    clock_t time_start = clock();
+    int streamfile_len = (int) st.st_size;
 
     FILE * fd_x;
     char * line = NULL;
@@ -219,39 +210,52 @@ int main(int argc, char *argv[]) {
 
     int i;
     int total = 0;
-    char *seq_X = (char *) malloc(sizeof(char) * BASELEN);
-
+    int BASELEN = 0;
+    auto *seq_X = (char *) malloc(sizeof(char) * basefile_len);
     while ((read = getline(&line, &len, fd_x)) != -1) {
         for (i = 0; i < read; i++) {
+            if (line[i] == '\n')
+                break;
             seq_X[total+i] = line[i];
+            BASELEN = BASELEN + 1;
         }
         total = total + (int) read;
     }
-    BASELEN = total;
     fclose(fd_x);
 
     FILE * fd_y;
-    line = NULL;
+    line = nullptr;
     len = 0;
 
     fd_y = fopen(streamseq, "r");
-    if (fd_y == NULL)
+    if (fd_y == nullptr)
         exit(EXIT_FAILURE);
 
     total = 0;
-    char *seq_Y = (char *) malloc(sizeof(char) * STREAMLEN);
+    int STREAMLEN = 0;
+    auto *seq_Y = (char *) malloc(sizeof(char) * streamfile_len);
     while ((read = getline(&line, &len, fd_y)) != -1) {
         for (i = 0; i < read; i++) {
+            if (line[i] == '\n')
+                break;
             seq_Y[total+i] = line[i];
+            STREAMLEN = STREAMLEN + 1;
         }
         total = total + (int) read;
     }
-    STREAMLEN = total;
     fclose(fd_y);
+
+    if (STREAMLEN > 1200000) {
+        printf("Stream sequence too long to process, max 1,200,000 bases");
+        exit(1);
+    }
+    printf("X length: %d, Y length: %d \n", BASELEN, STREAMLEN);
+
+    clock_t time_start = clock();
 
     StdProc p = StdProc(seq_X, BASELEN, seq_Y, STREAMLEN);
     p.process();
-    p.print();
+    // p.print();
 
     clock_t time_end = clock();
     double time_spent = (double) (time_end - time_start) / CLOCKS_PER_SEC;

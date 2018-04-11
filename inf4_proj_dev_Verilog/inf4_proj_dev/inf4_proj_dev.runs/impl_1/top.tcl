@@ -56,33 +56,33 @@ start_step init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/wt [current_project]
-  set_property parent.project_path /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.xpr [current_project]
+  set_property webtalk.parent_dir /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.cache/wt [current_project]
+  set_property parent.project_path /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.xpr [current_project]
   set_property ip_repo_paths {
-  /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/ip
-  /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado-ip
+  /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.cache/ip
+  /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado-ip
 } [current_project]
-  set_property ip_output_repo /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/ip [current_project]
-  add_files -quiet /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.dcp
+  set_property ip_output_repo /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.cache/ip [current_project]
+  add_files -quiet /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.dcp
   set_property edif_extra_search_paths /home/vytas/INF4/Verilog/init_xillybus/cores [current_fileset]
-  read_edif /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/system/pcores/xillybus_lite_v1_00_a/netlist/xillybus_lite.ngc
-  add_files -quiet /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo.dcp
-  set_property netlist_only true [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo.dcp]
-  add_files -quiet /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512.dcp
-  set_property netlist_only true [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512.dcp]
-  read_xdc -ref vga_fifo -cells U0 /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc
-  set_property processing_order EARLY [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc]
-  read_xdc -ref fifo_32x512 -cells U0 /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc
-  set_property processing_order EARLY [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc]
-  read_xdc -ref vivado_system_processing_system7_0_0 -cells inst /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc
-  set_property processing_order EARLY [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
-  read_xdc -prop_thru_buffers -ref vivado_system_rst_processing_system7_0_100M_0 /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc
-  set_property processing_order EARLY [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
-  read_xdc -ref vivado_system_rst_processing_system7_0_100M_0 /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc
-  set_property processing_order EARLY [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
-  read_xdc /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/xillydemo.xdc
-  read_xdc -ref vga_fifo -cells U0 /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc
-  set_property processing_order LATE [get_files /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc]
+  read_edif /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/system/pcores/xillybus_lite_v1_00_a/netlist/xillybus_lite.ngc
+  add_files -quiet /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo.dcp
+  set_property netlist_only true [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo.dcp]
+  add_files -quiet /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512.dcp
+  set_property netlist_only true [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512.dcp]
+  read_xdc -ref vga_fifo -cells U0 /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc
+  set_property processing_order EARLY [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc]
+  read_xdc -ref fifo_32x512 -cells U0 /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc
+  set_property processing_order EARLY [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc]
+  read_xdc -ref vivado_system_processing_system7_0_0 -cells inst /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc
+  set_property processing_order EARLY [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref vivado_system_rst_processing_system7_0_100M_0 /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc
+  set_property processing_order EARLY [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
+  read_xdc -ref vivado_system_rst_processing_system7_0_100M_0 /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc
+  set_property processing_order EARLY [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
+  read_xdc /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/xillydemo.xdc
+  read_xdc -ref vga_fifo -cells U0 /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc
+  set_property processing_order LATE [get_files /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc]
   link_design -top top -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -132,12 +132,12 @@ set rc [catch {
   create_msg_db route_design.pb
   route_design 
   set src_rc [catch { 
-    puts "source /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/showstopper.tcl"
-    source /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/showstopper.tcl
+    puts "source /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/showstopper.tcl"
+    source /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/showstopper.tcl
   } _RESULT] 
   if {$src_rc} { 
     send_msg_id runtcl-1 error "$_RESULT"
-    send_msg_id runtcl-2 error "sourcing script /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/showstopper.tcl failed"
+    send_msg_id runtcl-2 error "sourcing script /home/vytas/INF4/Verilog/init_xillybus/vivado-essentials/showstopper.tcl failed"
     return -code error
   }
   write_checkpoint -force top_routed.dcp
@@ -153,5 +153,20 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+}
+
+start_step write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force top.mmi }
+  write_bitstream -force top.bit 
+  catch { write_sysdef -hwdef top.hwdef -bitfile top.bit -meminfo top.mmi -file top.sysdef }
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
 }
 

@@ -6,13 +6,29 @@
 #include <asm/errno.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include <assert.h>
+
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+char transfer_success = 0;
+
+/* Snipped of code borrowed from https://stackoverflow.com/a/5927246 */
+char transfer_success_upd() {
+    int status;
+    char result;
+
+    status = pthread_mutex_lock(&lock);
+    assert (status == 0);
+    result = transfer_success;
+    status = pthread_mutex_unlock(&lock);
+    assert (status == 0);
+    return result;
+}
 
 /* Snippet of code borrowed from https://stackoverflow.com/a/3974138 */
-void printBits(size_t const size, void const * const ptr)
-{
+void print_bits(size_t const size, void const * const ptr) {
     unsigned char *b = (unsigned char*) ptr;
     unsigned char byte;
-    int i, j;
+    size_t i, j;
 
     for (i = size - 1; i >= 0; i--) {
         for (j = 7; j >= 0; j--) {
@@ -67,6 +83,8 @@ void * process_scores(void *arg) {
         // Debug
         // printf("Stream total: %d, end total: %d \n", stream_total, end_total);
 
+        // printf("stream total: %d \n", stream_total);
+
         while (row < base_total + 1) {
             // printf("Index: [%d][%d] = %d \n", row, col, (int) buf[row]);
             matrix[row*stream_len+col] = (short) buf[row];
@@ -87,7 +105,15 @@ void * process_scores(void *arg) {
         }
 
         col = stream_total;
+
+        if (!transfer_success && stream_total+1 == stream_len) {
+            pthread_mutex_lock(&lock);
+            transfer_success = 1;
+            pthread_mutex_unlock(&lock);
+        }
     }
+
+    printf("Processed total: %d / %ld Y entries \n", stream_total+1, stream_len);
 }
 
 void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
@@ -95,7 +121,7 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
     clock_t time_start = clock();
 
     short *matrix = (short *) malloc(sizeof(short) * BASELEN * STREAMLEN);
-    printf("Allocated %d space for score matrix \n", (int) sizeof(short) * BASELEN * STREAMLEN);
+    // printf("Allocated %d space for score matrix \n", (int) sizeof(short) * BASELEN * STREAMLEN);
 
     int read_handle;
     int sseq_out;
@@ -132,7 +158,7 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
     args.read_handle = read_handle;
 
     pthread_create(&read_thread, PTHREAD_CREATE_JOINABLE, process_scores, &args);
-    printf("Created thread for reading scores... \n");
+    // printf("Created thread for reading scores... \n");
 
     /* WRITE SEQUENCE X ****************************************/
     int i;
@@ -176,7 +202,7 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
         }
 
         // printf(", in 32-bit: %ld \n", partseq);
-        // printBits(4, &partseq);
+        // print_bits(4, &partseq);
 
         // Write base sequence to FPGA
         while (1) {
@@ -227,7 +253,7 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
         }
 
         // printf(", in 32-bit: %ld \n", partseq);
-        // printBits(4, &partseq);
+        // print_bits(4, &partseq);
 
         // Write base sequence to FPGA
         while (1) {
@@ -244,7 +270,7 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
         }
     }
     close(bseq_out);
-    printf("Successfully written sequence X into device! \n");
+    // printf("Successfully written sequence X into device! \n");
 
     /* WRITE SEQUENCE Y ****************************************/
     ssize_t sw;
@@ -286,13 +312,13 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
         }
 
         // printf(", in 32-bit: %ld \n", partseq);
-        // printBits(4, &partseq);
+        // print_bits(4, &partseq);
 
         // Write stream sequence to FPGA
         while (1) {
             sw = write(sseq_out, &partseq, 4);
 
-            if ((sw < 0) && (errno == EINTR))
+            if (((sw < 0) && (errno == EINTR)) || (sw == 0))
                 continue;
 
             if (sw < 0) {
@@ -337,7 +363,7 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
         }
 
         // printf(", in 32-bit: %ld \n", partseq);
-        // printBits(4, &partseq);
+        // print_bits(4, &partseq);
 
         // Write stream sequence to FPGA
         while (1) {
@@ -353,8 +379,14 @@ void process(int BASELEN, int STREAMLEN, char *baseseq, char *streamseq) {
             break;
         }
     }
+
+    // Workaround for the premature FPGA EOF
+    // Don't close the sequence Y interface before all elements are processed
+    while (!transfer_success)
+        usleep(15000);
+    
     close(sseq_out);
-    printf("Successfully written sequence Y into device! \n \n");
+    // printf("Successfully written sequence Y into device! \n \n");
 
     pthread_join(read_thread, NULL);
     close(read_handle);

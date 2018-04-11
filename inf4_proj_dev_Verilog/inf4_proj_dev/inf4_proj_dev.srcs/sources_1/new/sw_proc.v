@@ -189,29 +189,31 @@ module sw_proc(
      );
      
      /********************************************/
-     /* SSD DISPLAY LOGIC                        */
+     /* SSD DISPLAY LOGIC (DEBUGGING)            */
      /* Borrowed from INF3 Computer Design       */
      /* Coursework templates                     */
      /* (c) Nigel Topham                         */
      /********************************************/
+
+      wire [7:0] ssd_input;
      
-     wire [7:0] ssd_input;
+      ssd_driver u_ssd_driver (
+          .clk        (clk),   // clock input
+          .reset      (rst),   // reset input
+          .ssd_input  (ssd_input), // value to display, 8-bit integer
+          .ssd_a      (ssd_a),     // 7-bit unary code to drive display
+          .ssd_c      (ssd_c)      // control signal to switch between digits
+      );
      
-     ssd_driver u_ssd_driver (
-         .clk        (clk),   // clock input
-         .reset      (rst),   // reset input
-         .ssd_input  (ssd_input), // value to display, 8-bit integer
-         .ssd_a      (ssd_a),     // 7-bit unary code to drive display
-         .ssd_c      (ssd_c)      // control signal to switch between digits
-     );
-     
-     assign ssd_input = {2'b0,
-             !user_r_stream_score_out_open && !user_w_stream_dna_y_open,
-             final_counter == SEQ_DEPTH,
-             user_r_stream_score_out_open,
-             user_w_stream_dna_y_open,
-             final_flag,
-             user_r_stream_score_out_eof};
+      assign ssd_input = {1'd0,
+              user_r_stream_score_out_eof,
+              fifo_32_score_out_full,
+              user_r_stream_score_out_open,
+              proc_counter,
+              user_w_stream_dna_y_open,
+              X_load_ready,
+              user_w_stream_dna_x_open
+              };
      
      /*****************************************************/       
      /* SEQUENCE ALIGNMENT CONTROL LOGIC                  */

@@ -114,7 +114,7 @@ module tb_sw_proc();
                            
         #500 user_w_stream_dna_x_open = 1'b0;
         
-        #1000
+        #100
         seq_y[1:0] = 2'd1;
         seq_y[3:2] = 2'd0;
         seq_y[5:4] = 2'd0;
@@ -135,30 +135,31 @@ module tb_sw_proc();
         user_w_stream_dna_y_open = 1'b1;
         user_w_stream_dna_y_wren = 1'b1;
         user_w_stream_dna_y_data = seq_y[31:0];
-            
-        #2
-        seq_y[1:0] = 2'd1;
-        seq_y[3:2] = 2'd0;
-        seq_y[5:4] = 2'd1;
-        seq_y[7:6] = 2'd3;
-        seq_y[9:8] = 2'd3;
-        seq_y[11:10] = 2'd3;
-        seq_y[13:12] = 2'd3;
-        seq_y[15:14] = 2'd3;
-        seq_y[17:16] = 2'd1;
-        seq_y[19:18] = 2'd1;
-        seq_y[21:20] = 2'd1;
-        seq_y[23:22] = 2'd0;
-        seq_y[25:24] = 2'd2;
-        seq_y[27:26] = 2'd1;
-        seq_y[29:28] = 2'd2;
-        seq_y[31:30] = 2'd1;
-        
-        user_w_stream_dna_y_wren = 1'b1;
-        user_w_stream_dna_y_data = seq_y[31:0];
-        
         #2 user_w_stream_dna_y_wren = 1'b0;
-        #4 user_w_stream_dna_y_open = 1'b0;
+        
+        #2000
+        for (i=0; i<15; i=i+1)
+            begin
+            seq_y[1:0] =   ~seq_y[1:0];
+            seq_y[3:2] =   ~seq_y[9:8];
+            seq_y[5:4] =   ~seq_y[3:2];
+            seq_y[7:6] =   ~seq_y[7:6];
+            seq_y[9:8] =   ~seq_y[5:4];
+            seq_y[11:10] = ~seq_y[15:14];
+            seq_y[13:12] = ~seq_y[13:12];
+            seq_y[15:14] = ~seq_y[11:10];
+            seq_y[17:16] = ~seq_y[19:18];
+            seq_y[19:18] = ~seq_y[21:20];
+            seq_y[21:20] = ~seq_y[23:22];
+            seq_y[23:22] = ~seq_y[17:16];
+            seq_y[25:24] = ~seq_y[25:24];
+            seq_y[27:26] = ~seq_y[27:26];
+            seq_y[29:28] = ~seq_y[31:30];
+            seq_y[31:30] = ~seq_y[29:28];
+            user_w_stream_dna_y_wren = 1'b1;
+            user_w_stream_dna_y_data = seq_y[31:0];
+            #2 user_w_stream_dna_y_wren = 1'b0;
+            end
         
         #5000
         user_r_stream_score_out_open = 1'b1;
@@ -170,14 +171,101 @@ module tb_sw_proc();
             $display("%d", user_r_stream_score_out_data);
             #2 user_r_stream_score_out_rden = 1'b0;
             end
+              
+        for (i=0; i<15; i=i+1)
+            begin
+            seq_y[1:0] =   ~seq_y[1:0];
+            seq_y[3:2] =   ~seq_y[9:8];
+            seq_y[5:4] =   ~seq_y[3:2];
+            seq_y[7:6] =   ~seq_y[7:6];
+            seq_y[9:8] =   ~seq_y[5:4];
+            seq_y[11:10] = ~seq_y[15:14];
+            seq_y[13:12] = ~seq_y[13:12];
+            seq_y[15:14] = ~seq_y[11:10];
+            seq_y[17:16] = ~seq_y[19:18];
+            seq_y[19:18] = ~seq_y[21:20];
+            seq_y[21:20] = ~seq_y[23:22];
+            seq_y[23:22] = ~seq_y[17:16];
+            seq_y[25:24] = ~seq_y[25:24];
+            seq_y[27:26] = ~seq_y[27:26];
+            seq_y[29:28] = ~seq_y[31:30];
+            seq_y[31:30] = ~seq_y[29:28];
+            user_w_stream_dna_y_wren = 1'b1;
+            user_w_stream_dna_y_data = seq_y[31:0];
+            #2 user_w_stream_dna_y_wren = 1'b0;
+            end
         
         #500
-        for (i=0; i<4000; i=i+1)
+        for (i=0; i<100000; i=i+1)
             begin
             user_r_stream_score_out_rden = 1'b1;
             $display("%d", user_r_stream_score_out_data);
             #2 user_r_stream_score_out_rden = 1'b0;
             end
+            
+        for (i=0; i<1000; i=i+1)
+            begin
+            seq_y[1:0] =   ~seq_y[1:0];
+            seq_y[3:2] =   ~seq_y[9:8];
+            seq_y[5:4] =   ~seq_y[3:2];
+            seq_y[7:6] =   ~seq_y[7:6];
+            seq_y[9:8] =   ~seq_y[5:4];
+            seq_y[11:10] = ~seq_y[15:14];
+            seq_y[13:12] = ~seq_y[13:12];
+            seq_y[15:14] = ~seq_y[11:10];
+            seq_y[17:16] = ~seq_y[19:18];
+            seq_y[19:18] = ~seq_y[21:20];
+            seq_y[21:20] = ~seq_y[23:22];
+            seq_y[23:22] = ~seq_y[17:16];
+            seq_y[25:24] = ~seq_y[25:24];
+            seq_y[27:26] = ~seq_y[27:26];
+            seq_y[29:28] = ~seq_y[31:30];
+            seq_y[31:30] = ~seq_y[29:28];
+            user_w_stream_dna_y_wren = 1'b1;
+            user_w_stream_dna_y_data = seq_y[31:0];
+            #2 user_w_stream_dna_y_wren = 1'b0;
+            end
+        
+        #500
+        for (i=0; i<150000; i=i+1)
+            begin
+            user_r_stream_score_out_rden = 1'b1;
+            $display("%d", user_r_stream_score_out_data);
+            #2 user_r_stream_score_out_rden = 1'b0;
+            end
+        
+        for (i=0; i<1000; i=i+1)
+            begin
+            seq_y[1:0] =   ~seq_y[1:0];
+            seq_y[3:2] =   ~seq_y[9:8];
+            seq_y[5:4] =   ~seq_y[3:2];
+            seq_y[7:6] =   ~seq_y[7:6];
+            seq_y[9:8] =   ~seq_y[5:4];
+            seq_y[11:10] = ~seq_y[15:14];
+            seq_y[13:12] = ~seq_y[13:12];
+            seq_y[15:14] = ~seq_y[11:10];
+            seq_y[17:16] = ~seq_y[19:18];
+            seq_y[19:18] = ~seq_y[21:20];
+            seq_y[21:20] = ~seq_y[23:22];
+            seq_y[23:22] = ~seq_y[17:16];
+            seq_y[25:24] = ~seq_y[25:24];
+            seq_y[27:26] = ~seq_y[27:26];
+            seq_y[29:28] = ~seq_y[31:30];
+            seq_y[31:30] = ~seq_y[29:28];
+            user_w_stream_dna_y_wren = 1'b1;
+            user_w_stream_dna_y_data = seq_y[31:0];
+            #2 user_w_stream_dna_y_wren = 1'b0;
+            end
+            
+        #500
+        for (i=0; i<150000; i=i+1)
+            begin
+            user_r_stream_score_out_rden = 1'b1;
+            $display("%d", user_r_stream_score_out_data);
+            #2 user_r_stream_score_out_rden = 1'b0;
+            end
+            
+        #4 user_w_stream_dna_y_open = 1'b0;
         
     end
     

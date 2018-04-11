@@ -1,6 +1,6 @@
-webtalk_init -webtalk_dir /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/
+webtalk_init -webtalk_dir /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Apr 10 12:27:30 2018" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Tue Apr 10 22:59:12 2018" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2015.4 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "1412921" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
@@ -24,9 +24,9 @@ webtalk_add_data -client project -key system_ram -value "16.000 GB" -context "us
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "40 us" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "1201 us" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "3" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "2.01_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "230596_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 3380505545 -regid "211262179_0_0_922" -xml /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "86.18_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "240980_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 527877809 -regid "211262179_0_0_922" -xml /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.sim/sim_1/behav/xsim.dir/tb_sw_proc_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

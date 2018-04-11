@@ -2,11 +2,11 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Tue Apr 10 12:14:13 2018
-# Process ID: 1187
-# Current directory: /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1
+# Start of session at: Tue Apr 10 12:50:22 2018
+# Process ID: 5695
+# Current directory: /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1
 # Command line: vivado -log top.vds -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.vds
-# Journal file: /home/vytas/INF4/inf4_proj_main/inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/vivado.jou
+# Log file: /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.vds
+# Journal file: /home/vytas/INF4/Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

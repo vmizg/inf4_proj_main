@@ -12,90 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d809f670-6c2e-40ea-85fd-04eb0d497d22" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../illustr/impl_stats1.png" afterPath="$PROJECT_DIR$/../illustr/impl_stats1.png" />
-      <change beforePath="$PROJECT_DIR$/../illustr/impl_stats2.png" afterPath="$PROJECT_DIR$/../illustr/impl_stats2.png" />
-      <change beforePath="$PROJECT_DIR$/../illustr/impl_stats2_v2.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../inf4_dna_testbench/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../inf4_dna_testbench/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../inf4_dna_testbench/baseseq.txt" afterPath="$PROJECT_DIR$/../inf4_dna_testbench/baseseq.txt" />
-      <change beforePath="$PROJECT_DIR$/../inf4_dna_testbench/cmake-build-debug/CMakeFiles/inf4_dna_testbench.dir/depend.make" afterPath="$PROJECT_DIR$/../inf4_dna_testbench/cmake-build-debug/CMakeFiles/inf4_dna_testbench.dir/depend.make" />
       <change beforePath="$PROJECT_DIR$/../inf4_dna_testbench/cmake-build-debug/inf4_dna_testbench" afterPath="$PROJECT_DIR$/../inf4_dna_testbench/cmake-build-debug/inf4_dna_testbench" />
-      <change beforePath="$PROJECT_DIR$/../inf4_dna_testbench/streamseq.txt" afterPath="$PROJECT_DIR$/../inf4_dna_testbench/streamseq.txt" />
+      <change beforePath="$PROJECT_DIR$/../inf4_dna_testbench/main.cpp" afterPath="$PROJECT_DIR$/../inf4_dna_testbench/main.cpp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/inf4_proj_dev_C.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/inf4_proj_dev_C.dir/C.includecache" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/inf4_proj_dev_C.dir/main.c.o" afterPath="" />
       <change beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/wt/synthesis.wdf" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/wt/synthesis.wdf" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/wt/webtalk_pa.xml" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.cache/wt/webtalk_pa.xml" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.init_design.begin.rst" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.init_design.begin.rst" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.opt_design.begin.rst" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.opt_design.begin.rst" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.opt_design.end.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.place_design.begin.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.place_design.end.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.route_design.begin.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.route_design.end.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.vivado.begin.rst" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.vivado.begin.rst" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.vivado.end.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.write_bitstream.begin.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/.write_bitstream.end.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/gen_run.xml" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/gen_run.xml" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/init_design.pb" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/init_design.pb" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/opt_design.pb" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/opt_design.pb" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/place_design.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/route_design.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/runme.log" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/runme.log" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/runme.sh" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/runme.sh" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.bit" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.hwdef" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.sysdef" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.tcl" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.tcl" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.vdi" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top.vdi" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_clock_utilization_routed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_control_sets_placed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_drc_opted.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_drc_routed.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_drc_routed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_io_placed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_opt.dcp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_placed.dcp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_power_routed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_power_summary_routed.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_route_status.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_route_status.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_routed.dcp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_timing_summary_routed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_timing_summary_routed.rpx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_utilization_placed.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/top_utilization_placed.rpt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/vivado.jou" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/vivado.jou" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/vivado.pb" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/vivado.pb" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/impl_1/write_bitstream.pb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/.Xil/top_propImpl.xdc" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/.Xil/top_propImpl.xdc" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/.vivado.begin.rst" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/.vivado.begin.rst" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/dont_touch.xdc" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/dont_touch.xdc" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/gen_run.xml" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/gen_run.xml" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/planAhead.ngc2edif.log" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/planAhead.ngc2edif.log" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/runme.log" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/runme.log" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/runme.sh" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/runme.sh" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.dcp" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.dcp" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.tcl" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.tcl" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.vds" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top.vds" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top_utilization_synth.pb" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top_utilization_synth.pb" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top_utilization_synth.rpt" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/top_utilization_synth.rpt" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/vivado.jou" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/vivado.jou" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/vivado.pb" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.runs/synth_1/vivado.pb" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/bram.v" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/fifo_shift_2x32.v" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/fifo_shift_2x32.v" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_proc.v" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/inf4_proj_dev.srcs/sources_1/new/sw_proc.v" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/tb_sw_proc_behav1.wcfg" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/inf4_proj_dev/tb_sw_proc_behav1.wcfg" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.v" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.v" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.vhdl" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.vhdl" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_stub.v" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_stub.v" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_stub.vhdl" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/fifo_32x512/fifo_32x512_stub.vhdl" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_sim_netlist.v" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_sim_netlist.v" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_sim_netlist.vhdl" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_sim_netlist.vhdl" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_stub.v" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_stub.v" />
-      <change beforePath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_stub.vhdl" afterPath="$PROJECT_DIR$/../inf4_proj_dev_Verilog/init_xillybus/vivado-essentials/vga_fifo/vga_fifo_stub.vhdl" />
-      <change beforePath="$PROJECT_DIR$/../scripts/ssd_conv.py" afterPath="$PROJECT_DIR$/../scripts/ssd_conv.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,8 +32,8 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="401" column="41" lean-forward="false" selection-start-line="401" selection-start-column="41" selection-end-line="401" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="386" column="4" lean-forward="false" selection-start-line="386" selection-start-column="4" selection-end-line="386" selection-end-column="4" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -156,9 +77,11 @@
     <findStrings>
       <find>total</find>
       <find>\n</find>
+      <find>printBits</find>
     </findStrings>
     <replaceStrings>
       <replace>base_total</replace>
+      <replace>print_bits</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -218,7 +141,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../inf4_dna_testbench" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -264,7 +187,8 @@
       <workItem from="1523203482403" duration="1316000" />
       <workItem from="1523264917488" duration="196000" />
       <workItem from="1523265128019" duration="11000" />
-      <workItem from="1523272962055" duration="27384000" />
+      <workItem from="1523272962055" duration="29253000" />
+      <workItem from="1523383786517" duration="5714000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed read interface opening bug">
       <created>1523280097930</created>
@@ -287,32 +211,40 @@
       <option name="project" value="LOCAL" />
       <updated>1523371289336</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Small fixes">
+      <created>1523371650589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523371650589</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86821000" />
+    <option name="totallyTimeSpent" value="94404000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="25" width="1549" height="875" extended-state="6" />
+    <frame x="98" y="277" width="1549" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.092963204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24708927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294423" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25614488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.092963204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25614488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24708927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989025" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -338,6 +270,40 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baseseq.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streamseq.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -619,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="401" column="41" lean-forward="false" selection-start-line="401" selection-start-column="41" selection-end-line="401" selection-end-column="41" />
+        <state relative-caret-position="345">
+          <caret line="386" column="4" lean-forward="false" selection-start-line="386" selection-start-column="4" selection-end-line="386" selection-end-column="4" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
